@@ -1,0 +1,38 @@
+{
+  "name": "react-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaveTapp/react-template"
+  },
+  "author": "RaveTapp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaveTapp/react-template/issues"
+  },
+  "homepage": "https://github.com/RaveTapp/react-template#readme",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "jsdom": "^24.1.1",
+    "vite": "^5.3.4",
+    "vitest": "^2.0.5"
+  }
+}
