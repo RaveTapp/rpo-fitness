@@ -3,9 +3,7 @@ export function WorkoutItem(props) {
 
     return (
         <>
-            <h2>{props.title}</h2>
-            <hr />
-            
+            <h2 className="tekst">{props.title}</h2>
         </>
     );
 }
