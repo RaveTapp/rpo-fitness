@@ -10,9 +10,17 @@ export function WorkoutMenu() {
                 <h1 className={`${MenuCSS.tekst}`}>SAVED WORKOUTS</h1>
             </div>
             <hr className={MenuCSS.hr} />
-            <WorkoutItem title={"Leg day A"} />
-            <WorkoutItem title={"Leg day B"} />
-            <WorkoutItem title={"Leg day C"} />
+            <ul>
+                <li className={MenuCSS.item}>
+                    <WorkoutItem title={"Leg day A"} />
+                </li>
+                <li className={MenuCSS.item}>
+                    <WorkoutItem title={"Leg day B"}  />
+                </li>
+                <li className={MenuCSS.item}>
+                    <WorkoutItem title={"Leg day C"}  />
+                </li>
+            </ul>
             <PlusBtn />
         </div>
     );

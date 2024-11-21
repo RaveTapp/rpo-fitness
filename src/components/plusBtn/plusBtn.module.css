@@ -13,3 +13,9 @@
     width: 60%;
     height: 60%;
 }
+
+.container {
+    display: flex;
+    justify-content: end;
+    padding: 0 10px 10px 0;
+}
