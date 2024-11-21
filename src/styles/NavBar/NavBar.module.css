@@ -1,0 +1,29 @@
+.navbar {
+  width: 50%;
+  height: 70px;
+  background-color: black;
+  color: white;
+  position: absolute; /* Postavi navbar izven toka dokumenta */
+  top: 0; /* Postavi na vrh strani */
+  right: 0; /* Poravna na desni rob strani */
+  display: flex; /* Uporabi flexbox za notranje elemente */
+  gap: 300px; /* Doda razmik med notranjimi divi */
+}
+
+.middleSection {
+  width: 30%;
+  display: flex; /* Uporabi flexbox za notranje elemente */
+  gap: 20px;
+  align-items: top;
+}
+
+.navbar div {
+  padding: 10px;
+}
+
+.join {
+  font-size: 20px;
+  display: flex; /* Centriraj besedilo znotraj elementa */
+  justify-content: center;
+  align-items: center;
+}
