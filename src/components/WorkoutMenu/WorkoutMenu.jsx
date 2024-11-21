@@ -6,8 +6,10 @@ export function WorkoutMenu() {
 
     return (
         <div className={MenuCSS.menu}>
-            <h1 className={MenuCSS.tekst}>SAVED WORKOUTS</h1>
-            <hr />
+            <div className={MenuCSS.mainTitle}>
+                <h1 className={`${MenuCSS.tekst}`}>SAVED WORKOUTS</h1>
+            </div>
+            <hr className={MenuCSS.hr} />
             <WorkoutItem title={"Leg day A"} />
             <WorkoutItem title={"Leg day B"} />
             <WorkoutItem title={"Leg day C"} />
