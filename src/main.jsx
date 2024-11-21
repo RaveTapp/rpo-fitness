@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Menu } from "./components/menu/menu";
+import { WorkoutMenu } from "./components/WorkoutMenu/WorkoutMenu";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-      <Menu />
+      <WorkoutMenu />
     </React.StrictMode>
   );

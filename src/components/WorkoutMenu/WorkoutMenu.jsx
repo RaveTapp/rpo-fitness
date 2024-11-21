@@ -1,8 +1,8 @@
 import { WorkoutItem } from "./workoutItem";
 import { PlusBtn } from "../plusBtn/plusBtn";
-import MenuCSS from "./menu.module.css"
+import MenuCSS from "./WorkoutMenu.module.css"
 
-export function Menu() {
+export function WorkoutMenu() {
 
     return (
         <div className={MenuCSS.menu}>

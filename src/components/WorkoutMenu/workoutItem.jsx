@@ -1,5 +1,5 @@
 
-import MenuCSS from "./menu.module.css"
+import MenuCSS from "./WorkoutMenu.module.css"
 
 export function WorkoutItem(props) {
 
