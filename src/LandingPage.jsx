@@ -1,4 +1,4 @@
-import Header from "./Header.jsx";
+import Header from "./Header/Header.jsx";
 import NavBar from "./NavBar/NavBar.jsx";
 import Logo from "./NavBar/Logo.jsx";
 import styles from "./LandingPage.module.css";
@@ -11,6 +11,7 @@ function LandingPage() {
         <Logo />
         <Header />
       </div>
+      <div className="ProgressTracing"></div>
     </>
   );
 }
