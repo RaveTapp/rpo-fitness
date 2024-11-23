@@ -1,0 +1,31 @@
+.FirstBlock {
+  width: 100%;
+  height: 200px;
+  background-color: #414c66;
+  font-size: 10px;
+  display: block;
+}
+
+.SecondBlock {
+  width: 100%;
+  height: 200px;
+  background-color: #7186b2;
+  font-size: 10px;
+  display: block;
+}
+
+.ThirdBlock {
+  width: 100%;
+  height: 200px;
+  background-color: #414c66;
+  font-size: 10px;
+  display: block;
+}
+
+.FourthBlock {
+  width: 100%;
+  height: 200px;
+  background-color: #7186b2;
+  font-size: 10px;
+  display: block;
+}
