@@ -10,6 +10,7 @@ h2 {
 .menu {
     background-color: var(--mid-bright-blue-color);
     border-radius: 12px;
+    width: max(60%, 310px);
 }
 
 .mainTitle{
@@ -31,4 +32,8 @@ h2 {
     flex-direction: row;
     justify-content: space-around;
     margin: 24px 0;
+}
+
+.dots:hover {
+    fill: #ffffff91;
 }
