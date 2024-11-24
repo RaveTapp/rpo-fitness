@@ -3,24 +3,16 @@
     --main-bg-color: #101319;
 }
 
-h2 {
-    margin: 0;
-}
-
 .menu {
     background-color: var(--mid-bright-blue-color);
     border-radius: 12px;
-    width: max(60%, 310px);
+    width: max(40%, 310px);
 }
 
 .mainTitle{
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.tekst {
-    color: #EEEEEE;
 }
 
 .hr {

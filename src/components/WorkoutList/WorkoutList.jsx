@@ -1,4 +1,5 @@
 import ListCSS from "./WorkoutList.module.css"
+import CSS from "../../main.module.css"
 import { PlusBtn } from "../plusBtn/plusBtn";
 import { ExerciseItem } from "./ExerciseItem";
 
@@ -8,7 +9,7 @@ export function WorkoutList() {
     return (
         <div className={ListCSS.menu}>
             <div className={ListCSS.mainTitle}>
-                <h1 className={`${ListCSS.tekst}`}>Test</h1>
+                <h1 className={`${CSS.tekst}`}>Test</h1>
                 {/* treba passat ime not */}
             </div>
             <hr className={ListCSS.hr} />

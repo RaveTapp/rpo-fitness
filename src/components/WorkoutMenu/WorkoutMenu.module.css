@@ -3,10 +3,6 @@
     --main-bg-color: #101319;
 }
 
-h2 {
-    margin: 0;
-}
-
 .menu {
     background-color: var(--mid-bright-blue-color);
     border-radius: 12px;
@@ -17,10 +13,6 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.tekst {
-    color: #EEEEEE;
 }
 
 .hr {

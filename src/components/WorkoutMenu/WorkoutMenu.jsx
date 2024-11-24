@@ -1,13 +1,14 @@
 import { WorkoutItem } from "./workoutItem";
 import { PlusBtn } from "../plusBtn/plusBtn";
 import MenuCSS from "./WorkoutMenu.module.css"
+import CSS from "../../main.module.css"
 
 export function WorkoutMenu() {
 
     return (
         <div className={MenuCSS.menu}>
             <div className={MenuCSS.mainTitle}>
-                <h1 className={`${MenuCSS.tekst}`}>SAVED WORKOUTS</h1>
+                <h1 className={CSS.tekst}>SAVED WORKOUTS</h1>
             </div>
             <hr className={MenuCSS.hr} />
             <ul>
