@@ -8,3 +8,24 @@
     border-radius: 12px;
     width: max(40%, 310px);
 }
+
+.mainTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imageContainer img {
+    width: 150px;
+    height: 150px;
+}
+
+.tekst {
+    text-align: center;
+}

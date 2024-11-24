@@ -6,7 +6,14 @@ export function ExerciseShowcase(props) {
 
     return (
         <div className={ExerciseCSS.menu}>
-                <h1 className={`${CSS.tekst}`}>{props.title}</h1>
+            <div className={ExerciseCSS.mainTitle}>
+                <h1 className={CSS.tekst}>{props.title}</h1>
+            </div>
+            <div className={ExerciseCSS.imageContainer}>
+                <img src="" alt="" />
+                <img src="" alt="" />
+            </div>
+            <p className={`${CSS.tekst} ${ExerciseCSS.tekst}`}>{props.exerText}</p>
         </div>
     );
 }
