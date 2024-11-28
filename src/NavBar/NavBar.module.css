@@ -1,42 +1,42 @@
 .navbar {
   width: 100%;
-  height: 70px;
+  height: 4.375rem;
   color: white;
   display: flex;
   align-items: center;
-  gap: 200px;
+  gap: 12.5rem;
 }
 
 .middleSection {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Prevzemi preostali prostor */
-  gap: 30px;
+  flex-grow: 1;
+  gap: 1.875rem;
   font-weight: 1000;
 }
 
 .navbar a {
-  padding: 10px;
+  padding: 0.625rem;
   display: inline-block;
   position: relative;
   text-align: center;
 }
 
 .join {
-  font-size: 30px;
-  width: auto; /* Avtomatska širina glede na vsebino */
+  font-size: 1.875rem;
+  width: auto;
   justify-content: center;
   align-items: center;
 }
 
 .logo {
-  width: 200px;
-  height: 120px;
+  width: 18.125rem;
+  height: 11.25rem;
 }
 
 .navAndHeader {
-  height: 700px;
+  height: 43.75rem;
   border: 0;
   padding: 0;
   background-image: url(../assets/background.jpeg);
@@ -46,27 +46,27 @@
 }
 
 .navAndLogo {
-  height: 200px;
+  height: 12.5rem;
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
-  padding: 10px 15px 0px 15px;
+  padding: 0.625rem 0.9375rem 0 0.9375rem;
 }
 
 @media screen and (max-width: 1200px) {
   .navbar {
-    gap: 50px;
+    gap: 6.25rem;
     flex-direction: row;
     justify-content: space-around;
   }
 
   .navbar {
     width: 100%;
-    height: 70px;
+    height: 4.375rem;
     color: white;
     display: flex;
     align-items: center;
-    gap: 100px;
+    gap: 6.25rem;
   }
 
   .middleSection {
@@ -75,35 +75,35 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 20px;
+    gap: 1.25rem;
     font-weight: 1000;
   }
 
   .navbar a {
-    padding: 10px;
+    padding: 0.625rem;
     display: inline-block;
     position: relative;
     text-align: center;
   }
 
   .join {
-    font-size: 20px;
-    width: 200px;
+    font-size: 1.25rem;
+    width: 12.5rem;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
     font-weight: 1000;
   }
 
   .logo {
-    width: 200px;
-    height: 120px;
+    width: 12.5rem;
+    height: 7.5rem;
     justify-content: left;
     align-items: left;
   }
 
   .navAndHeader {
-    height: 500px;
+    height: 31.25rem;
     border: 0;
     padding: 0;
     background-image: url(../assets/background.jpeg);
@@ -112,22 +112,22 @@
   }
 
   .navAndLogo {
-    height: 200px;
+    height: 12.5rem;
     width: 100%;
     display: inline-flex;
     justify-content: space-evenly;
-    padding: 10px 15px 0px 15px;
+    padding: 0.625rem 0.9375rem 0 0.9375rem;
   }
 }
 
 @media screen and (max-width: 768px) {
   .navAndHeader {
-    height: 400px; /* Še manjša višina za še manjše zaslone */
+    height: 25rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .navAndHeader {
-    height: 300px; /* Najmanjša višina za majhne telefone */
+    height: 18.75rem;
   }
 }
