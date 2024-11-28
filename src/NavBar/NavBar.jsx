@@ -11,11 +11,11 @@ function NavBar() {
           <nav>
             <div className={styles.navbar}>
               <div className={styles.middleSection}>
-                <div>About </div>
-                <div>Pricing </div>
-                <div>Contact us </div>
+                <a>About </a>
+                <a>Pricing </a>
+                <a>Contact us </a>
               </div>
-              <div className={styles.join}>JOIN NOW</div>
+              <a className={styles.join}>JOIN NOW</a>
             </div>
           </nav>
         </div>
