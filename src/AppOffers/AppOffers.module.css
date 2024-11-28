@@ -21,7 +21,6 @@
 
 .FirstBlock h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
 }
 
 .FirstBlock img {
@@ -40,8 +39,6 @@
 }
 
 .SecondBlock h1 {
-  text-align: left;
-  margin-top: 3rem;
   font-size: 3rem;
 }
 
@@ -80,7 +77,14 @@
 }
 
 .ThirdBlock h1 {
-  margin-top: 3rem;
+  font-size: 3rem;
+}
+
+.ThirdBlock img {
+  width: 30rem;
+  height: 40rem;
+  margin-top: 1rem;
+  margin-left: 3rem;
 }
 
 .FourthBlock {
@@ -93,11 +97,11 @@
 
 @media screen and (max-width: 1200px) {
   .FirstBlock {
-    height: 300px;
+    height: 18.75rem;
   }
 
   .FirstBlock img {
-    width: 16rem;
+    width: 15rem;
     height: 19rem;
     margin-top: 1rem;
     margin-right: 1rem;
@@ -108,7 +112,7 @@
   }
 
   .SecondBlock {
-    height: 300px;
+    height: 18.75rem;
   }
 
   .SecondBlock img {
@@ -122,10 +126,20 @@
   }
 
   .ThirdBlock {
-    height: 300px;
+    height: 18.75rem;
+  }
+
+  .ThirdBlock img {
+    width: 15rem;
+    height: 19rem;
+    margin-top: 1rem;
+  }
+
+  .ThirdBlock h1 {
+    font-size: 1rem;
   }
 
   .FourthBlock {
-    height: 300px;
+    height: 18.75rem;
   }
 }
