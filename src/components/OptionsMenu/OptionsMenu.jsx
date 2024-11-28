@@ -27,6 +27,10 @@ export function OptionsMenu() {
                 <button className={MenuCSS.btn}>Generate</button>
             </div>
 
+            <div className={MenuCSS.errorBox}>
+                <p className={MenuCSS.errorText}>Test error</p>
+            </div>
+
         </div>
     );
 }
