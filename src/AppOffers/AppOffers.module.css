@@ -35,7 +35,7 @@
   height: 39rem;
   background-color: #7186b2;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .SecondBlock h1 {
@@ -91,8 +91,15 @@
   width: 100%;
   height: 39rem;
   background-color: #7186b2;
-  font-size: 0.625px;
-  display: block;
+  display: flex;
+  justify-content: space-around;
+}
+
+.FourthBlock img {
+  width: 38rem;
+  height: 30rem;
+  margin-top: 2rem;
+  margin-left: 3rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -141,5 +148,16 @@
 
   .FourthBlock {
     height: 18.75rem;
+  }
+
+  .FourthBlock h1 {
+    font-size: 1rem;
+  }
+
+  .FourthBlock img {
+    width: 19rem;
+    height: 13rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
   }
 }
