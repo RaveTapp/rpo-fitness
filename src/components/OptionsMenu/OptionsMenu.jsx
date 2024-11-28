@@ -23,7 +23,9 @@ export function OptionsMenu() {
                 </li>
             </ul>
 
-            <button className={MenuCSS.btn}>Generate</button>
+            <div className={MenuCSS.btnContainer}>
+                <button className={MenuCSS.btn}>Generate</button>
+            </div>
 
         </div>
     );
