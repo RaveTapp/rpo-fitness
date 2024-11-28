@@ -2,7 +2,6 @@
   width: 100%;
   height: 39rem;
   background-color: #414c66;
-  font-size: 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -14,6 +13,7 @@
   align-items: flex-start;
   width: 50%;
   padding-left: 3rem;
+  padding-top: 0rem;
 }
 
 .Text {
@@ -25,7 +25,7 @@
   margin-bottom: 1rem;
 }
 
-.Image {
+.FirstBlock img {
   width: 30rem;
   height: 40rem;
   margin-top: 1rem;
@@ -36,7 +36,6 @@
   width: 100%;
   height: 39rem;
   background-color: #7186b2;
-  font-size: 10px;
   display: flex;
   justify-content: space-around;
 }
@@ -44,6 +43,7 @@
 .SecondBlock h1 {
   text-align: left;
   margin-top: 3rem;
+  font-size: 3rem;
 }
 
 .SecondBlock img {
@@ -56,7 +56,7 @@
   width: 100%;
   height: 39rem;
   background-color: #414c66;
-  font-size: 10px;
+  font-size: 0.625px;
   display: flex;
   justify-content: space-around;
 }
@@ -69,7 +69,7 @@
   width: 100%;
   height: 39rem;
   background-color: #7186b2;
-  font-size: 10px;
+  font-size: 0.625px;
   display: block;
 }
 
@@ -86,12 +86,17 @@
   }
 
   .FirstBlock h1 {
-    padding-top: 3rem;
+    padding-top: 0rem;
     font-size: 1rem;
   }
 
   .SecondBlock {
     height: 300px;
+  }
+
+  .SecondBlock h1 {
+    padding-top: 1rem;
+    font-size: 1rem;
   }
 
   .ThirdBlock {

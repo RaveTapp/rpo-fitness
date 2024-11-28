@@ -17,7 +17,6 @@ function AppOffers() {
             </div>
           </div>
           <img
-            className={styles.Image}
             src="https://via.placeholder.com/150"
             alt="progress tracking"
           ></img>
