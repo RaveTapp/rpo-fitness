@@ -13,7 +13,6 @@
   align-items: flex-start;
   width: 50%;
   padding-left: 3rem;
-  padding-top: 0rem;
 }
 
 .Text {
@@ -47,9 +46,28 @@
 }
 
 .SecondBlock img {
-  width: 16rem;
-  height: 19rem;
+  width: 30rem;
+  height: 40rem;
   margin-top: 1rem;
+  margin-left: 3rem;
+}
+
+.RightSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  padding-right: 3rem;
+}
+
+.RightSection h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.RightSection .Text {
+  font-size: 1.2rem;
 }
 
 .ThirdBlock {
@@ -86,7 +104,6 @@
   }
 
   .FirstBlock h1 {
-    padding-top: 0rem;
     font-size: 1rem;
   }
 
@@ -94,8 +111,13 @@
     height: 300px;
   }
 
+  .SecondBlock img {
+    width: 15rem;
+    height: 19rem;
+    margin-top: 1rem;
+  }
+
   .SecondBlock h1 {
-    padding-top: 1rem;
     font-size: 1rem;
   }
 

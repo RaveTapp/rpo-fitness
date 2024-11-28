@@ -21,10 +21,19 @@ function AppOffers() {
             alt="progress tracking"
           ></img>
         </div>
-
         <div className={styles.SecondBlock}>
           <img src="https://via.placeholder.com/150"></img>
-          <h1>HEALTHY RECIPES</h1>
+          <div className={styles.RightSection}>
+            <h1>HEALTHY RECIPES</h1>
+            <div className={styles.Text}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </div>
+          </div>
         </div>
         <div className={styles.ThirdBlock}>
           <h1>PERSONAL PROGRAM</h1>
