@@ -29,3 +29,7 @@
 .dots:hover {
     fill: #ffffff91;
 }
+
+.activeDots {
+    transform: rotate(0);
+}
