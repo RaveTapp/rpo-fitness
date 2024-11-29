@@ -26,10 +26,28 @@
     margin: 24px 0;
 }
 
+.dots {
+    transform: rotate(90deg);
+}
+
 .dots:hover {
     fill: #ffffff91;
 }
 
+/* .activeDots {
+    transform: rotate(-90deg) !important;
+} */
+
 .activeDots {
-    transform: rotate(0);
-}
+    animation: rotate-keyframes 1s;
+   }
+   
+   @keyframes rotate-keyframes {
+    from {
+     transform: rotate(90deg);
+    }
+   
+    to {
+     transform: rotate(0deg);
+    }
+   }
