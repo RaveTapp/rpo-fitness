@@ -11,9 +11,9 @@ export function OptionsWindow(props) {
     let optionsList = [];
 
     radioOptions[props.title].forEach(e => {
-        optionsList.push(<input type="radio" id={e} name={props.title + "_select"} value={e} />);
-        optionsList.push(<label for={e}>{e}</label>);
-        optionsList.push(<br/>);
+        optionsList.push(<input type="radio" id={e} name={props.title + "_select"} value={e} key={e + '1'} />);
+        optionsList.push(<label htmlFor={e} key={e + '2'}>{e}</label>);
+        optionsList.push(<br key={e + '3'} />);
     });
 
     return (
