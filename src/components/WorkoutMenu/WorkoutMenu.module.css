@@ -21,22 +21,26 @@
 
 .item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     margin: 24px 0;
 }
 
+.horizontalFlex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .dots {
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
+    animation: derotate-keyframes 1s;
 }
 
 .dots:hover {
     fill: #ffffff91;
-}
 
-/* .activeDots {
-    transform: rotate(-90deg) !important;
-} */
+}
 
 .activeDots {
     animation: rotate-keyframes 1s;
@@ -51,3 +55,25 @@
      transform: rotate(0deg);
     }
    }
+
+   @keyframes derotate-keyframes {
+    from {
+     transform: rotate(0deg);
+    }
+   
+    to {
+     transform: rotate(90deg);
+    }
+   }
+
+.disabled {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.redText {
+    color: #FF0000;
+}

@@ -1,27 +1,27 @@
 import ListCSS from "./WorkoutList.module.css"
+import MenuCSS from "../WorkoutMenu/WorkoutMenu.module.css"
 import CSS from "../../main.module.css"
 import { PlusBtn } from "../plusBtn/plusBtn";
-import { ExerciseItem } from "./ExerciseItem";
+import { WorkoutItem } from "../WorkoutMenu/workoutItem";
 
-export function WorkoutList() {
+export function WorkoutList(props) {
 
 
     return (
         <div className={ListCSS.menu}>
             <div className={ListCSS.mainTitle}>
-                <h1 className={`${CSS.tekst}`}>Test</h1>
-                {/* treba passat ime not */}
+                <h1 className={`${CSS.tekst}`}>{props.title}</h1>
             </div>
             <hr className={ListCSS.hr} />
             <ul>
-                <li className={ListCSS.item}>
-                    <ExerciseItem title="Barbell Lunge" />
+                <li className={MenuCSS.item}>
+                    <WorkoutItem title="Barbell Lunge" />
                 </li>
-                <li className={ListCSS.item}>
-                    <ExerciseItem title="Front Squat" />
+                <li className={MenuCSS.item}>
+                    <WorkoutItem title="Front Squat" />
                 </li>
-                <li className={ListCSS.item}>
-                    <ExerciseItem title="Leg Curls" />
+                <li className={MenuCSS.item}>
+                    <WorkoutItem title="Leg Curls" />
                 </li>
             </ul>
             <PlusBtn />
