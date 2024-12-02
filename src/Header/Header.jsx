@@ -1,20 +1,20 @@
-import Button from "./Button/Button.jsx"
+import React from 'react';
 
 function Header() {
-
     return (
         <header>
             <nav>
                 <ul>
-                    <Button name="PREMIUM"/>
-                    <Button name="PROFILE"/>
-                    <li><a href="#"></a>Exercise</li>
-                    <li><a href="#"></a>Nutrition</li>
-                    <li><a href="#"></a>Contact</li>
+                    <li><a href="#exercise">Exercise</a></li>
+                    <li><a href="#nutrition">Nutrition</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#exercise">PREMIUM</a></li>
+                    <li><a href="#exercise">PROFILE</a></li>
+                    
                 </ul>
             </nav>
         </header>
     );
 }
 
-export default Header
+export default Header;
