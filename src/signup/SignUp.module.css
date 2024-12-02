@@ -27,7 +27,7 @@
   margin-bottom: 2rem;
   display: flex;
   margin-left: 1rem;
-  gap: 20%;
+  gap: 15.5rem;
 }
 
 .Name input {
@@ -35,8 +35,9 @@
   border-color: gray;
   border-radius: 3%;
   background-color: #252525;
-  border-width: 1px;
+  border-width: 0.1px;
   color: white;
+  border-style: solid;
 }
 
 .firstName,
@@ -68,14 +69,15 @@
   border-color: gray;
   border-radius: 3%;
   background-color: #252525;
-  border-width: 1px;
+  border-width: 0.1px;
   color: white;
+  border-style: solid;
 }
 
 .Password {
   margin-left: 1rem;
   display: flex;
-  gap: 20%;
+  gap: 10.5rem;
 }
 
 .PasswordInput,
@@ -96,8 +98,9 @@
   border-color: gray;
   border-radius: 3%;
   background-color: #252525;
-  border-width: 1px;
+  border-width: 0.1px;
   color: white;
+  border-style: solid;
 }
 
 .CreateButton {
@@ -117,4 +120,31 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: #414c66;
+}
+
+@media screen and (max-width: 1200px) {
+  .SignUpBox {
+    width: 43rem;
+    height: 33rem;
+  }
+
+  .Name {
+    gap: 23%;
+  }
+
+  .Password,
+  .Email,
+  .Name {
+    margin-left: 0.5rem;
+  }
+
+  .Password {
+    gap: 10%;
+  }
+
+  .CreateButton {
+    margin-left: 0.5rem;
+    height: 2.5rem;
+    width: 10rem;
+  }
 }
