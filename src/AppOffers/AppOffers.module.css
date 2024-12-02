@@ -35,7 +35,7 @@
   height: 39rem;
   background-color: #7186b2;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .SecondBlock h1 {
