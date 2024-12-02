@@ -1,5 +1,5 @@
 import React from "react";
-//import Header from "./Header/Header.jsx";
+import Header from "./Header/Header.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Button from "./Button/Button.jsx";
 import Card from "./Card/Card.jsx";
@@ -14,11 +14,7 @@ function App() {
 
   return (
     <>
-      <Button name="Exercise" />
-      <Button name="Nutrition" />
-      <Button name="Contact" />
-      <Button name="Profile" />
-      <Button name="Premium" />
+      <Header/>
       <SectionName name="WELCOME BACK, NAME" />
       <div className="cards_container">
         <Card imageSrc={exercisePic} title="Exercise" />

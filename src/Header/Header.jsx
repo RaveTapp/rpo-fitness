@@ -1,16 +1,17 @@
 import React from 'react';
+import styles from './Header.module.css';
+
 
 function Header() {
     return (
-        <header>
+        <header className={styles.header}>
             <nav>
-                <ul>
-                    <li><a href="#exercise">Exercise</a></li>
-                    <li><a href="#nutrition">Nutrition</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#exercise">PREMIUM</a></li>
-                    <li><a href="#exercise">PROFILE</a></li>
-                    
+                <ul className={styles.ul}>
+                    <li className={styles.li}>Exercise</li> 
+                    <li className={styles.li}>Nutrition</li>
+                    <li className={styles.li}>Contact</li>
+                    <li className={styles.premium}>premium</li>
+                    <li className={styles.profile}>PROFILE</li>
                 </ul>
             </nav>
         </header>
