@@ -15,17 +15,21 @@ function SignUp() {
             <input type="text"></input>
           </div>
         </div>
-        <div className="email">
+        <div className={styles.Email}>
           <label>Email</label>
-          <input type="text"></input>
+          <input type="email"></input>
         </div>
-        <div className="password">
-          <label>Password</label>
-          <input type="text"></input>
-          <label>Confirm Password</label>
-          <input type="text"></input>
+        <div className={styles.Password}>
+          <div className={styles.PasswordInput}>
+            <label>Password</label>
+            <input type="password"></input>
+          </div>
+          <div className={styles.ConfirmPassword}>
+            <label>Confirm Password</label>
+            <input type="password"></input>
+          </div>
         </div>
-        <div className="button">Create account</div>
+        <div className={styles.CreateButton}>Create account</div>
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 .SignUpBox {
   width: 53rem;
   height: 37rem;
-  background-color: black;
+  background-color: #252525;
   color: white;
   position: absolute;
   top: 50%;
@@ -24,16 +24,92 @@
 }
 
 .Name {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   display: flex;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  gap: 20%;
+}
+
+.Name input {
+  width: 10rem;
+  border-color: gray;
+  border-radius: 3%;
+  background-color: #252525;
+  border-width: 1px;
+  color: white;
 }
 
 .firstName,
 .lastName {
   margin-bottom: 2rem;
   display: flex;
-  flex-direction: column; /* da je input pod label*/
+  flex-direction: column;
+}
+
+.firstName label,
+.lastName label {
+  margin-bottom: 0.3rem;
+}
+
+.Email {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Email label {
+  margin-bottom: 0.3rem;
+}
+
+.Email input {
+  width: 15rem;
+  height: 1rem;
+  margin-bottom: 3rem;
+  border-color: gray;
+  border-radius: 3%;
+  background-color: #252525;
+  border-width: 1px;
+  color: white;
+}
+
+.Password {
+  margin-left: 1rem;
+  display: flex;
+  gap: 20%;
+}
+
+.PasswordInput,
+.ConfirmPassword {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Password label {
+  margin-bottom: 0.3rem;
+}
+
+.Password input {
+  width: 15rem;
+  height: 1rem;
+  margin-bottom: 1rem;
+  border-color: gray;
+  border-radius: 3%;
+  background-color: #252525;
+  border-width: 1px;
+  color: white;
+}
+
+.CreateButton {
+  margin-left: 1rem;
+  height: 3rem;
+  width: 13rem;
+  border-radius: 3%;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  color: black;
 }
 
 body {
