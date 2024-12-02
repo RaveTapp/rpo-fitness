@@ -1,0 +1,16 @@
+body {
+  background: linear-gradient(#627398, #000000);
+}
+
+.cards_container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;     /* Centers vertically */
+  gap: 20px;               /* Adds some space between the cards */
+  margin-top: auto; 
+  flex-wrap: wrap;
+}
+
+.transparent {
+  border: transparent;
+}

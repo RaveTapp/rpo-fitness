@@ -1,0 +1,29 @@
+.card {
+    text-align: center;
+    width: 515px;
+    height: 515px;
+    display: inline-block;
+    margin-right: 100px;
+    position: relative;
+  }
+
+/*Piši si, da si veliko časa izgubil, saj si imenoval card-image, cesar js ne podpira -> 20 min*/
+
+/*Ne sme biti card-image, js ne podpira vezaja!!!*/
+.card_image { 
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px;
+  }
+  
+  h2 {
+    position: absolute; /* Positioning h2 inside the card */
+    top: 85%; /* Vertically center h2 */
+    left: 28%; /* Horizontally center h2 */
+    transform: translate(-50%, -50%); /*Adjust the position to truly center*/
+    color: whitesmoke;
+    font-size: 45px; /* You can adjust the font size as needed */
+    font-weight: bold; /* Optional: make it bold for emphasis */
+    text-transform: uppercase;
+  }

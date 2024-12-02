@@ -1,0 +1,42 @@
+/* .button {
+    background-color: transparent;
+    border: #7186B2 3px;
+    border-radius: 5px;
+    width: 136px;
+    height: 55px;
+    color: whitesmoke;
+    cursor: pointer;
+  }
+
+.buttonSpan {
+  display: inline-block
+  } 
+
+.buttonContainer {
+  text-align: right;
+} */
+
+.buttonContainer {
+  display: flex; 
+  justify-content: flex-end; 
+  gap: 10px;
+  margin: 10px; 
+}
+
+.buttonSpan {
+  display: inline-block;
+}
+
+.button {
+  background-color: transparent; 
+  border: transparent;
+  border-radius: 5px;
+  width: 136px;
+  height: 55px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+/*Porabil 60 minut, da bi naredil header takšen kot sem si ga želel
+Nisem uspel dokončat
+*/

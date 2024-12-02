@@ -1,0 +1,14 @@
+.BMI {
+    height: 400px;
+    width: 400px;
+    border: solid;
+    display: inline-block;
+    margin-right: 500px;
+    margin-left: 400px;
+    background-color: #627398;
+
+}
+
+p {
+    color: whitesmoke;
+}
