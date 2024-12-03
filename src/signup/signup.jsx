@@ -1,5 +1,24 @@
 import styles from "./SignUp.module.css";
+import React, { useState } from "react";
+
 function SignUp() {
+  /*const [form, setForm] = useState({
+        name: "",
+        lastName: "",
+        email: "",
+        password: "",
+        confirmPassword: ""
+    });
+
+    
+    */
+  const handleSubmit = () => {
+    console.log("test");
+  };
+
+  /* shrani podatke iz labelov*/
+  /*poglej ce se passworda ujemata*/
+  /*poslji podatke na backend -> fetch, JSON.stringify in checkaj ce se je vreo poslalo*/
   return (
     <>
       <div className={styles.SignUpBox}>
@@ -29,7 +48,9 @@ function SignUp() {
             <input type="password" placeholder="Confirm Password"></input>
           </div>
         </div>
-        <div className={styles.CreateButton}>Create account</div>
+        <div className={styles.CreateButton} onClick={handleSubmit}>
+          Create account
+        </div>
       </div>
     </>
   );
