@@ -8,24 +8,24 @@ import CalcBMI from "./CalcBMI/CalcBMI.jsx";
 import exercisePic from "./assets/exercise.webp";
 import nutritionPic from "./assets/hrana1.jpg";
 import graf from "./assets/graf.png"
-import Newsletter from "./Newsletter/Newsletter.jsx";
 
 function App() {
 
   return (
     <>
       <Header/>
-      <SectionName name="WELCOME BACK, NAME" />
+      <SectionName name="WELCOME BACK, NAME"/>
       <div className="cards_container">
-        <Card imageSrc={exercisePic} title="Exercise" />
-        <Card imageSrc={nutritionPic} title="Nutrition" />
+        <Card imageSrc={exercisePic} title="Exercise"/>
+        <Card imageSrc={nutritionPic} title="Nutrition"/>
       </div>
-      <SectionName name="PROGRESS" />
-      <CalcBMI />
-      <img src={graf} alt="graf"></img>
+      <SectionName name="PROGRESS"/>
       <div>
-        <Footer />
-        <Newsletter />
+        <CalcBMI/>
+        {/* <img src={graf} alt="graf"></img> */}
+      </div>
+      <div>
+        <Footer/>
       </div>
     </>
   );

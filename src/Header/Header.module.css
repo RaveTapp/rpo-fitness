@@ -14,10 +14,11 @@ nav ul {
 }
 
 nav li {
-    margin: 0 50px; /* Add spacing between links */
-    font-size: 24px; /* Set font size for list items */
+    margin: 0 24px; /* Spacing med posameznimi <li>*/
+    font-size: 24px; 
     cursor: pointer;
     font-weight: bold;
+    color: whitesmoke;
 }
 
 nav a {
@@ -38,6 +39,12 @@ nav .premium {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+nav .premium:hover {
+    background-color: whitesmoke;
+    color: #000;
+    border: #000;
+}
+
 nav .profile {
     background-color: transparent; 
     color: whitesmoke; 
@@ -47,4 +54,11 @@ nav .profile {
     border: 3px solid #92ACE5; 
     text-transform: uppercase; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav .profile:hover {
+    background-color: #92ACE5;
+    color: whitesmoke;
+    border: 3px solid #7186B2; 
+
 }
