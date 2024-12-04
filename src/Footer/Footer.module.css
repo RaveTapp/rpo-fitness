@@ -17,6 +17,7 @@
   .column {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
   }
   
   .column p {
@@ -89,3 +90,66 @@
     color: #000;
   }
   
+
+  @media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px; 
+    }
+
+    .column {
+        width: 100%; 
+        margin: 0 auto; 
+        text-align: center; 
+    }
+
+    .container {
+      flex-direction: column; 
+      align-items: center; 
+      gap: 20px; 
+  }
+
+  .newsletter {
+      margin: 0 auto; 
+      width: 100%; 
+      text-align: center;
+  }
+
+  .newsletterForm {
+      width: 100%; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center;
+      gap: 10px; 
+  }
+
+  .input, .button {
+      width: 100%; 
+      margin: 10px 0; 
+  }
+}
+
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 10px; 
+    }
+
+    .column p, .link {
+        font-size: 12px; 
+    }
+
+    .newsletter p {
+        font-size: 18px; 
+    }
+
+    .button {
+        font-size: 16px; 
+    }
+}
+
+
+
+
+
