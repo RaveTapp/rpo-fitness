@@ -4,11 +4,10 @@ body {
 
 .cards_container {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center;     /* Centers vertically */
-  gap: 20px;               /* Adds some space between the cards */
-  margin-top: auto; 
-  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;   
+  gap: 20px;             
+  margin: 0;         
 }
 
 .transparent {

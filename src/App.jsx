@@ -13,19 +13,29 @@ function App() {
 
   return (
     <>
-      <Header/>
-      <SectionName name="WELCOME BACK, NAME"/>
+      <Header />
+      <SectionName name="WELCOME BACK, NAME" />
       <div className="cards_container">
-        <Card imageSrc={exercisePic} title="Exercise"/>
-        <Card imageSrc={nutritionPic} title="Nutrition"/>
+        <Card
+          imageSrc={exercisePic}
+          title="Exercise"
+          description="Learn about various exercises to stay fit and healthy!"
+          redirectUrl="/exercise"
+        />
+        <Card
+          imageSrc={nutritionPic}
+          title="Nutrition"
+          description="Discover healthy eating habits and nutritious meals!"
+          redirectUrl="/nutrition"
+        />
       </div>
-      <SectionName name="PROGRESS"/>
+      <SectionName name="PROGRESS" />
       <div>
-        <CalcBMI/>
+        <CalcBMI />
         {/* <img src={graf} alt="graf"></img> */}
       </div>
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
