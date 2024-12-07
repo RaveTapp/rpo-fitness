@@ -3,13 +3,15 @@ const { Client } = require("pg");
 const fs = require('fs');
 require('dotenv').config()
 
-const SQL = fs.readFileSync('populatedb.sql').toString();
-
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: "postgresql://"+ process.env.ROOT_NAME +":" + process.env.PASS + "@"+ process.env.LOCAL_CONNECTION + "/" + process.env.DB,
-  });
+    user: process.env.ROOT_NAME,
+    host: 'localhost',
+    database: 'rpo',
+    password: process.env.PASS,
+    port: 5432,
+  })
   await client.connect();
   await client.query(SQL);
   await client.end();
@@ -18,4 +20,31 @@ async function main() {
 
 main();
 
+const SQL = `CREATE TABLE IF NOT EXISTS uporabnik (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR (255) NOT NULL,
+  email VARCHAR (255) NOT NULL,
+  password VARCHAR (255) NOT NULL
+);
 
+CREATE TABLE IF NOT EXISTS vadba (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  ime VARCHAR ( 255 ) NOT NULL,
+  fk_uporabnik INT,
+  FOREIGN KEY(fk_uporabnik) REFERENCES uporabnik(id)
+);
+
+CREATE TABLE IF NOT EXISTS vaja (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  ime VARCHAR ( 255 ) NOT NULL,
+  opis TEXT
+);
+
+CREATE TABLE IF NOT EXISTS vaja_vadba (
+  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  zaporedje_vaje INT NOT NULL,
+  fk_vadba INT,
+  fk_vaja INT,
+  FOREIGN KEY(fk_vadba) REFERENCES vadba(id),
+  FOREIGN KEY(fk_vaja) REFERENCES vaja(id)
+);`;
