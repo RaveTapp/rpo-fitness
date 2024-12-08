@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS hrana (
 
 CREATE TABLE IF NOT EXISTS bmi (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  datum DATETIME NOT NULL,
+  datum TIMESTAMP NOT NULL,
   teza NUMERIC(5,2) NOT NULL,
   visina NUMERIC(5,2) NOT NULL,
   fk_uporabnik INT,
@@ -67,13 +67,9 @@ CREATE TABLE IF NOT EXISTS voda (
   FOREIGN KEY(fk_uporabnik) REFERENCES uporabnik(id)
 );
 
-INSERT INTO product (name, fk_category) 
+-- Testni podatki
+INSERT INTO uporabnik (name, email, password)
 VALUES
-  ('Toilet paper roll', 1),
-  ('Paper towels', 1),
-  ('Paper tissues', 1);
+  ('Jan', 'jan.skok@hotmail.com', '$&df#%f_!*'),
+  ('Mojca', 'mojca.lopatar78@gmail.com', 'p1*:13fh/l');
 
-
-INSERT INTO categories (name)
-VALUES
-  ('Paper');
