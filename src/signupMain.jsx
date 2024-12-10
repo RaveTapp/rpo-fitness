@@ -1,9 +1,9 @@
 import React from "react";
-import LandingPage from "./landingPage";
 import ReactDOM from "react-dom/client";
+import SignUp from "./signup/signup.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <LandingPage />
+    <SignUp />
   </React.StrictMode>
 );

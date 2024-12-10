@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "fa1a",
+      "name": "nik",
+      "lastName": "mori",
+      "email": "temp",
+      "password": "test123"
+    },
+    {
+      "id": "9727",
+      "name": "Nik2",
+      "lastName": "mori",
+      "email": "temp@gmail.com",
+      "password": "test123"
+    },
+    {
+      "id": "bd92",
+      "name": "Nik2",
+      "lastName": "mori",
+      "email": "temp@gmail.com",
+      "password": "test123"
+    }
+  ]
+}
