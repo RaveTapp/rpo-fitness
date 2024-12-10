@@ -1,5 +1,5 @@
 import React from "react";
-import LandingPage from "./landingPage";
+import LandingPage from "./LandingPage";
 import ReactDOM from "react-dom/client";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
