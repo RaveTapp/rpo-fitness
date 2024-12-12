@@ -69,10 +69,15 @@ async function deleteProduct(id) {
 }
 
 async function addUser(name, email, password) {
-  await pool.query(
-    "INSERT INTO uporabnik (name, email, password) VALUES ($1, $2, $3)",
-    [name, email, password]
-  );
+  try {
+    await pool.query(
+      "INSERT INTO uporabnik (name, email, password) VALUES ($1, $2, $3)",
+      [name, email, password]
+    );
+    console.log("User added to database");
+  } catch (error) {
+    console.error("Error adding user to database:", error);
+  }
 }
 
 module.exports = {

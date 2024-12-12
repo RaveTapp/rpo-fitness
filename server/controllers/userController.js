@@ -38,12 +38,14 @@ const categoriesDeleteGet = async (req, res) => {
 };
 
 const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
-  // if (!name || !email || !password) {
-  //   return;
-  // }
-  await addUser(name, email, password);
-  res.redirect("/");
+  try {
+    const { name, email, password } = req.body;
+    await addUser(name, email, password);
+    res.status(200).json({ message: "User registered successfully" });
+  } catch (error) {
+    console.error("Error registering user:", error);
+    res.status(500).json({ error: "Failed to register user" });
+  }
 };
 
 module.exports = {
