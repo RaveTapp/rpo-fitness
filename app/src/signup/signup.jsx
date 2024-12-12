@@ -37,14 +37,13 @@ function SignUp() {
     console.log("CONFIRM PASSWORD:", form.confirmPassword);
 
     try {
-      const response = await fetch("http://localhost:3000/users", {
+      const response = await fetch("http://localhost:3000/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           name: form.name,
-          lastName: form.lastName,
           email: form.email,
           password: form.password,
         }),

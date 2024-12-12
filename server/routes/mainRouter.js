@@ -1,8 +1,11 @@
 const { Router } = require("express");
 const router = Router();
 const userController = require("../controllers/userController");
+const { registerUser } = require("../controllers/userController");
 
 router.get("/", userController.testGet);
+
+router.post("/signup", registerUser);
 
 module.exports = router;
 
@@ -13,6 +16,3 @@ module.exports = router;
 // router.post("/:id/update", categoriesController.categoriesUpdatePost);
 
 // router.post("/:id/delete", categoriesController.categoriesDeleteGet);
-
-
-

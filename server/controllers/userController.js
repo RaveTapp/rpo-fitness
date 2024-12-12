@@ -37,6 +37,15 @@ const categoriesDeleteGet = async (req, res) => {
   res.redirect("/");
 };
 
+const registerUser = async (req, res) => {
+  const { name, email, password } = req.body;
+  // if (!name || !email || !password) {
+  //   return;
+  // }
+  await addUser(name, email, password);
+  res.redirect("/");
+};
+
 module.exports = {
   testGet,
   categoriesCreateGet,
@@ -44,4 +53,5 @@ module.exports = {
   categoriesUpdateGet,
   categoriesUpdatePost,
   categoriesDeleteGet,
+  registerUser,
 };

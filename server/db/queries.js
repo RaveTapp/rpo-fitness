@@ -70,7 +70,8 @@ async function deleteProduct(id) {
 
 async function addUser(name, email, password) {
   await pool.query(
-    "INSERT INTO uporabnik (name, email, password) VALUES ($1, $2, $3), [name, email, password]"
+    "INSERT INTO uporabnik (name, email, password) VALUES ($1, $2, $3)",
+    [name, email, password]
   );
 }
 
