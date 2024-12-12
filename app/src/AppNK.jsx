@@ -6,6 +6,7 @@ import SectionName from "./SectionNameNK/SectionName.jsx";
 import CalcBMI from "./CalcBMINK/CalcBMI.jsx";
 import exercisePic from "./assetsNK/exercise.webp";
 import nutritionPic from "./assetsNK/hrana1.jpg";
+import styles from "./AppNK.module.css";
 
 function AppNK() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -13,12 +14,12 @@ function AppNK() {
 
   useEffect(() => {
     const fadeOutTimer = setTimeout(() => {
-      setShowWelcome(false); // Trigger fade-out animation
-    }, 4000); // Keep the welcome screen for 3 seconds
+      setShowWelcome(false);
+    }, 4000);
 
     const homePageTimer = setTimeout(() => {
-      setShowHomePage(true); // Show home page after fade-out
-    }, 3500); // Show home page after 1 second of fade-out
+      setShowHomePage(true);
+    }, 3500);
 
     return () => {
       clearTimeout(fadeOutTimer);
@@ -29,8 +30,8 @@ function AppNK() {
   return (
     <>
       {showWelcome && (
-        <div className="welcome">
-          <h1 className="welcome-text">Welcome Back, NAME</h1>
+        <div className={styles.welcome}>
+          <h1 className={styles["welcome-text"]}>Welcome Back, NAME</h1>
         </div>
       )}
 
@@ -38,7 +39,7 @@ function AppNK() {
         <>
           <Header />
           <SectionName name="WELCOME BACK, NAME" />
-          <div className="cards_container">
+          <div className={styles.cards_container}>
             <Card
               imageSrc={exercisePic}
               title="Exercise"
