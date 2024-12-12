@@ -68,6 +68,12 @@ async function deleteProduct(id) {
   await pool.query("DELETE FROM product WHERE id=($1)", [id]);
 }
 
+async function addUser(name, email, password) {
+  await pool.query(
+    "INSERT INTO uporabnik (name, email, password) VALUES ($1, $2, $3), [name, email, password]"
+  );
+}
+
 module.exports = {
   getAll,
   addCategory,
@@ -79,4 +85,5 @@ module.exports = {
   addProductInCategory,
   updateProduct,
   deleteProduct,
+  addUser,
 };
