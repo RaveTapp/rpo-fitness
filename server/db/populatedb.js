@@ -1,17 +1,17 @@
 #! /usr/bin/env node
 const { Client } = require("pg");
-const fs = require('fs');
-require('dotenv').config()
+const fs = require("fs");
+require("dotenv").config();
 
 async function main() {
   console.log("seeding...");
   const client = new Client({
     user: process.env.ROOT_NAME,
-    host: 'localhost',
-    database: 'rpo',
+    host: "localhost",
+    database: "rpo",
     password: process.env.PASS,
     port: 5432,
-  })
+  });
   await client.connect();
   await client.query(SQL);
   await client.end();

@@ -40,10 +40,11 @@ const categoriesDeleteGet = async (req, res) => {
 const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    await addUser(name, email, password);
+    console.log("Request body:", req.body); // Preverite prejeti podatki
+    await db.addUser(name, email, password);
     res.status(200).json({ message: "User registered successfully" });
   } catch (error) {
-    console.error("Error registering user:", error);
+    console.error("Error registering user:", error.message); // Dodajte error.message
     res.status(500).json({ error: "Failed to register user" });
   }
 };
