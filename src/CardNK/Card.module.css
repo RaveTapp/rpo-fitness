@@ -1,0 +1,91 @@
+.card {
+  perspective: 1000px; 
+  width: 515px;
+  height: 515px;
+  margin: 20px;
+}
+
+.card_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card_inner {
+  transform: rotateY(180deg);
+}
+
+.card_front,
+.card_back {
+  position: absolute;
+  width: 100%; 
+  height: 100%; 
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden; 
+}
+
+.card_front {
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.card_back {
+  background-color: #202633;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transform: rotateY(180deg); 
+  font-size: 24px;
+}
+
+.card_description {
+  font-size: 32px; 
+  margin-bottom: 20px; 
+  text-align: center; 
+  line-height: 1.5; 
+}
+
+.card_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 10px 10px 0 0; 
+}
+
+.card_front h2 {
+  position: absolute;
+  top: 77%; 
+  left: 28%;
+  transform: translateX(-50%);
+  color: whitesmoke;
+  font-size: 45px; 
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.discover_button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: whitesmoke;
+  background-color: #92ACE5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.discover_button:hover {
+  background-color: whitesmoke;
+    color: #000;
+    border: #000;
+}
