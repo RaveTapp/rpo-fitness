@@ -12,43 +12,42 @@ function Login() {
     setData({ ...data, [name]: value });
   };
 
-  const checkEmail = (databaseEmail, email) => {
-    if (databaseEmail === email) {
-      return true;
-    }
-    return false;
-  };
+  // const checkEmail = (databaseEmail, email) => {
+  //   if (databaseEmail === email) {
+  //     return true;
+  //   }
+  //   return false;
+  // };
 
-  const checkPassword = (databasePassword, password) => {
-    if (databasePassword === password) {
-      return true;
-    }
-    return false;
-  };
+  // const checkPassword = (databasePassword, password) => {
+  //   if (databasePassword === password) {
+  //     return true;
+  //   }
+  //   return false;
+  // };
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://localhost:3000/users");
-      if (!response.ok) {
-        throw new Error("Napaka pri fetchanju");
-      }
-
-      const users = await response.json();
-
-      const userFound = users.some(function (user) {
-        return (
-          checkEmail(user.email, data.email) &&
-          checkPassword(user.password, data.password)
-        );
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+        }),
       });
 
-      if (userFound) {
-        console.log("Uporabnik je bil najden!");
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        console.log(responseData.message);
       } else {
-        console.log("Uporabnik ni bil najden!");
+        console.log(responseData.message);
       }
     } catch (error) {
-      console.log("Error: ", error);
+      console.log("Error: ", error.message);
     }
   };
 

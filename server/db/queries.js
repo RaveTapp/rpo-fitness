@@ -80,6 +80,13 @@ async function addUser(name, email, password) {
   }
 }
 
+async function getEmail(email) {
+  const result = await pool.query("SELECT * FROM uporabnik WHERE email = $1", [
+    email,
+  ]);
+  return result.rows[0] || null;
+}
+
 module.exports = {
   getAll,
   addCategory,
@@ -92,4 +99,5 @@ module.exports = {
   updateProduct,
   deleteProduct,
   addUser,
+  getEmail,
 };

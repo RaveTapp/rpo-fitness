@@ -47,6 +47,31 @@ const registerUser = async (req, res) => {
   }
 };
 
+const approveUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Poišči uporabnika z email naslovom
+    const user = await db.getEmail(email);
+    if (!user) {
+      return res
+        .status(200)
+        .json({ message: "Uporabnik s tem emailom ne obstaja" });
+    }
+
+    // Preveri geslo
+    if (password !== user.password) {
+      return res.status(200).json({ message: "Napačno geslo" });
+    }
+
+    // Uspesna prijava
+    res.status(200).json({ message: "Uspešna prijava" });
+  } catch (error) {
+    console.error("Napaka pri preverjanju uporabnika:", error);
+    res.status(500).json({ error: "Napaka na strežniku" });
+  }
+};
+
 module.exports = {
   testGet,
   categoriesCreateGet,
@@ -55,4 +80,5 @@ module.exports = {
   categoriesUpdatePost,
   categoriesDeleteGet,
   registerUser,
+  approveUser,
 };
