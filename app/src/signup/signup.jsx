@@ -49,13 +49,15 @@ function SignUp() {
         }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        console.log("Napaka pri pošiljanju podatkov na strežnik.");
+        console.log(data.error);
       } else {
-        console.log("Podatki uspešno poslani.");
+        console.log(data.message);
       }
     } catch (error) {
-      console.log("Error: ", error);
+      console.log("Error: ", error.message);
     }
   };
 
