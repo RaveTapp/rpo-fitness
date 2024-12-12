@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header/Header.jsx";
-import Footer from "./Footer/Footer.jsx";
-import Card from "./Card/Card.jsx";
-import SectionName from "./SectionName/SectionName.jsx";
-import CalcBMI from "./CalcBMI/CalcBMI.jsx";
-import exercisePic from "./assets/exercise.webp";
-import nutritionPic from "./assets/hrana1.jpg";
+import Header from "./HeaderNK/Header.jsx";
+import Footer from "./FooterNK/Footer.jsx";
+import Card from "./CardNK/Card.jsx";
+import SectionName from "./SectionNameNK/SectionName.jsx";
+import CalcBMI from "./CalcBMINK/CalcBMI.jsx";
+import exercisePic from "./assetsNK/exercise.webp";
+import nutritionPic from "./assetsNK/hrana1.jpg";
 
-function App() {
+function AppNK() {
   const [showWelcome, setShowWelcome] = useState(true);
   const [showHomePage, setShowHomePage] = useState(false);
 
@@ -63,4 +63,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppNK;
