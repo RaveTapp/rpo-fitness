@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "",
     lastName: "",
@@ -55,13 +56,13 @@ function SignUp() {
         console.log(data.error);
       } else {
         console.log(data.message);
+        navigate("/");
       }
     } catch (error) {
       console.log("Error: ", error.message);
     }
   };
 
-  const navigate = useNavigate();
   return (
     <>
       <div className={styles.SignUpBox}>

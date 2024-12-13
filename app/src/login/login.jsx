@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -32,13 +34,13 @@ function Login() {
         console.log(responseData.message);
       } else {
         console.log(responseData.message);
+        navigate("/");
       }
     } catch (error) {
       console.log("Error: ", error.message);
     }
   };
 
-  const navigate = useNavigate();
   return (
     <>
       <div className={styles.loginBox}>
