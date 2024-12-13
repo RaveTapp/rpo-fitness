@@ -1,5 +1,6 @@
 import styles from "./Login.module.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [data, setData] = useState({
@@ -11,20 +12,6 @@ function Login() {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
-
-  // const checkEmail = (databaseEmail, email) => {
-  //   if (databaseEmail === email) {
-  //     return true;
-  //   }
-  //   return false;
-  // };
-
-  // const checkPassword = (databasePassword, password) => {
-  //   if (databasePassword === password) {
-  //     return true;
-  //   }
-  //   return false;
-  // };
 
   const handleSubmit = async () => {
     try {
@@ -51,6 +38,7 @@ function Login() {
     }
   };
 
+  const navigate = useNavigate();
   return (
     <>
       <div className={styles.loginBox}>
@@ -81,9 +69,19 @@ function Login() {
           <div className={styles.ForgotPassword}>Forgot password</div>
         </div>
         <div className={styles.SigninButton} onClick={handleSubmit}>
-          Sign in
+          Login
         </div>
-        <div>Dont have an account? Sign up</div>
+        <div className={styles.textForRouting}>
+          Dont have an account?
+          <div
+            className={styles.SignupButton}
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Sign up
+          </div>
+        </div>
       </div>
     </>
   );

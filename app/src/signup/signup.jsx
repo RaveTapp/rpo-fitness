@@ -1,5 +1,6 @@
 import styles from "./SignUp.module.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [form, setForm] = useState({
@@ -10,7 +11,6 @@ function SignUp() {
     confirmPassword: "",
   });
 
-  /* shrani podatke iz input polja name */
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -61,13 +61,22 @@ function SignUp() {
     }
   };
 
-  /*poglej ce se passworda ujemata*/
-  /*poslji podatke na backend -> fetch, JSON.stringify in checkaj ce se je vreo poslalo*/
+  const navigate = useNavigate();
   return (
     <>
       <div className={styles.SignUpBox}>
         <h1>Create new account</h1>
-        <div className={styles.Member}>Already A Member? Log in</div>
+        <div className={styles.Member}>
+          Already A Member?
+          <div
+            className={styles.LoginButton}
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Log in
+          </div>
+        </div>
         <div className={styles.Name}>
           <div className={styles.firstName}>
             <label>First Name</label>

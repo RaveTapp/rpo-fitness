@@ -1,8 +1,11 @@
 import styles from "./NavBar.module.css";
 import Logo from "./Logo.jsx";
 import Header from "../Header/Header.jsx";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className={styles.navAndHeader}>
@@ -15,7 +18,14 @@ function NavBar() {
                 <a>Pricing </a>
                 <a>Contact us </a>
               </div>
-              <a className={styles.join}>JOIN NOW</a>
+              <a
+                className={styles.join}
+                onClick={() => {
+                  navigate("/signup");
+                }}
+              >
+                JOIN NOW
+              </a>
             </div>
           </nav>
         </div>
