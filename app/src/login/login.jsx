@@ -26,15 +26,18 @@ function Login() {
           email: data.email,
           password: data.password,
         }),
+        // credentials: "include",
       });
 
-      const responseData = await response.json();
+      //const responseData = await response.json();
 
       if (!response.ok) {
+        const responseData = await response.json(); // This will parse the error message sent from the server
         console.log(responseData.message);
       } else {
+        const responseData = await response.json(); // This will parse the success message
         console.log(responseData.message);
-        navigate("/");
+        navigate("/"); // Redirect on success
       }
     } catch (error) {
       console.log("Error: ", error.message);

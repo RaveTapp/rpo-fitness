@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/RaveTapp/rpo-fitness#readme",
   "dependencies": {
+    "jsonwebtoken": "^9.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^7.0.2"

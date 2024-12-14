@@ -1,4 +1,5 @@
 const db = require("../db/queries");
+const jwt = require("jsonwebtoken");
 
 const testGet = async (req, res) => {
   res.json({ test: ["1", "2", "3"] });
@@ -47,6 +48,28 @@ const registerUser = async (req, res) => {
   }
 };
 
+const createToken = (user) => {
+  try {
+    const token = jwt.sign({ email: user.email }, "tempKey", {
+      expiresIn: "1h",
+    });
+    console.log("Token ustvarjen:", token);
+    return token;
+  } catch (error) {
+    console.error("Napaka pri ustvarjanju žetona:", error);
+    throw error;
+  }
+};
+
+const setCookie = (res, token) => {
+  res.cookie("authToken", token, {
+    httpOnly: true,
+    sameSite: "strict",
+    maxAge: 3600000,
+  });
+  console.log("Piškotek nastavljen");
+};
+
 const approveUser = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -55,17 +78,23 @@ const approveUser = async (req, res) => {
     const user = await db.getEmail(email);
     if (!user) {
       return res
-        .status(200)
+        .status(404)
         .json({ message: "Uporabnik s tem emailom ne obstaja" });
     }
 
     // Preveri geslo
     if (password !== user.password) {
-      return res.status(200).json({ message: "Napačno geslo" });
+      return res.status(401).json({ message: "Napačno geslo" });
     }
 
     // Uspesna prijava
-    res.status(200).json({ message: "Uspešna prijava" });
+    const token = createToken(user);
+    setCookie(res, token);
+
+    res.status(200).json({
+      message: "Uspešna prijava",
+      user: { email: user.email },
+    });
   } catch (error) {
     console.error("Napaka pri preverjanju uporabnika:", error);
     res.status(500).json({ error: "Napaka na strežniku" });
