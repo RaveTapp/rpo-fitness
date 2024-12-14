@@ -26,18 +26,20 @@ function Login() {
           email: data.email,
           password: data.password,
         }),
-        // credentials: "include",
+        credentials: "include",
       });
 
       //const responseData = await response.json();
 
       if (!response.ok) {
-        const responseData = await response.json(); // This will parse the error message sent from the server
+        const responseData = await response.json();
         console.log(responseData.message);
       } else {
-        const responseData = await response.json(); // This will parse the success message
+        const responseData = await response.json();
         console.log(responseData.message);
-        navigate("/"); // Redirect on success
+        if (responseData.message === "Uspešna prijava") {
+          navigate("/");
+        }
       }
     } catch (error) {
       console.log("Error: ", error.message);

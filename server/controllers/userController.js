@@ -78,13 +78,13 @@ const approveUser = async (req, res) => {
     const user = await db.getEmail(email);
     if (!user) {
       return res
-        .status(404)
+        .status(200)
         .json({ message: "Uporabnik s tem emailom ne obstaja" });
     }
 
     // Preveri geslo
     if (password !== user.password) {
-      return res.status(401).json({ message: "Napačno geslo" });
+      return res.status(200).json({ message: "Napačno geslo" });
     }
 
     // Uspesna prijava

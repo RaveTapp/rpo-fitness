@@ -6,8 +6,8 @@ const cookieParser = require("cookie-parser");
 
 app.use(
   cors({
-    credentials: true, // Dovoli pošiljanje piškotkov
-    origin: "http://localhost:5173", // Dovoli dostop iz tvoje React aplikacije
+    credentials: true,
+    origin: "http://localhost:5173",
   })
 );
 
