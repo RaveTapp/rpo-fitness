@@ -72,7 +72,10 @@ function Login() {
           ></input>
         </div>
         <div className={styles.SharedDiv}>
-          <div className={styles.RememberMe}>Remember me</div>
+          <div className={styles.RememberMe}>
+            <input type="checkbox" className={styles.checkBox}></input>
+            <div>Remember me</div>
+          </div>
           <div className={styles.ForgotPassword}>Forgot password</div>
         </div>
         <div className={styles.SigninButton} onClick={handleSubmit}>

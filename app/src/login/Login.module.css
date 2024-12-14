@@ -40,7 +40,7 @@
 
 .SharedDiv {
   display: flex;
-  gap: 25rem;
+  gap: 23rem;
 }
 
 .SigninButton {
@@ -73,6 +73,11 @@ body {
   cursor: pointer;
 }
 
+.RememberMe {
+  display: flex;
+  gap: 0.4rem;
+}
+
 @media screen and (max-width: 1200px) {
   .loginBox {
     width: 32rem;
@@ -81,7 +86,7 @@ body {
 
   .SharedDiv {
     display: flex;
-    gap: 16rem;
+    gap: 15rem;
   }
 
   .SigninButton {
