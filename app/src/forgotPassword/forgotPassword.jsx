@@ -4,6 +4,8 @@ import styles from "./forgotPassword.module.css";
 function forgotPassword() {
   const navigate = useNavigate();
 
+  const handleSubmit = (e) => {};
+
   return (
     <>
       <div className={styles.forgotPasswordDiv}>
@@ -12,7 +14,9 @@ function forgotPassword() {
           <div className={styles.input}>
             <input type="text" placeholder="Enter your code here"></input>
           </div>
-          <div className={styles.buttonSubmit}>Submit</div>
+          <div className={styles.buttonSubmit} onClick={handleSubmit}>
+            Submit
+          </div>
         </div>
       </div>
     </>

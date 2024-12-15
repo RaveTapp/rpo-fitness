@@ -11,10 +11,6 @@ function Login() {
     rememberMe: false,
   });
 
-  const handleForgotPassword = () => {
-    console.log("test");
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
@@ -94,7 +90,9 @@ function Login() {
             </div>
             <div
               className={styles.ForgotPassword}
-              onClick={handleForgotPassword}
+              onClick={() => {
+                navigate("/forgotPassword");
+              }}
             >
               Forgot password
             </div>

@@ -80,6 +80,10 @@
   gap: 0.4rem;
 }
 
+.ForgotPassword {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1200px) {
   .loginBox {
     width: 32rem;
