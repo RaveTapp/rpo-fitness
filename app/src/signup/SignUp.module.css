@@ -124,11 +124,13 @@
   color: black;
 }
 
-body {
+.signupBody {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   background-color: #414c66;
+  height: 100vh;
+  width: 100vw;
 }
 
 @media screen and (max-width: 1200px) {

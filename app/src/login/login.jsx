@@ -11,6 +11,10 @@ function Login() {
     rememberMe: false,
   });
 
+  const handleForgotPassword = () => {
+    console.log("test");
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
@@ -54,53 +58,60 @@ function Login() {
 
   return (
     <>
-      <div className={styles.loginBox}>
-        <h1>Welcome back</h1>
-        <div className={styles.Email}>
-          <label>Email</label>
-          <input
-            type="text"
-            placeholder="Enter your email"
-            name="email"
-            value={data.email}
-            onChange={handleInputChange}
-          ></input>
-        </div>
-
-        <div className={styles.Password}>
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={data.password}
-            onChange={handleInputChange}
-          ></input>
-        </div>
-        <div className={styles.SharedDiv}>
-          <div className={styles.RememberMe}>
+      <div className={styles.loginBody}>
+        <div className={styles.loginBox}>
+          <h1>Welcome back</h1>
+          <div className={styles.Email}>
+            <label>Email</label>
             <input
-              type="checkbox"
-              className={styles.checkBox}
-              checked={data.rememberMe}
-              onChange={handleCheckboxChange}
+              type="text"
+              placeholder="Enter your email"
+              name="email"
+              value={data.email}
+              onChange={handleInputChange}
             ></input>
-            <div>Remember me</div>
           </div>
-          <div className={styles.ForgotPassword}>Forgot password</div>
-        </div>
-        <div className={styles.SigninButton} onClick={handleSubmit}>
-          Login
-        </div>
-        <div className={styles.textForRouting}>
-          Dont have an account?
-          <div
-            className={styles.SignupButton}
-            onClick={() => {
-              navigate("/signup");
-            }}
-          >
-            Sign up
+
+          <div className={styles.Password}>
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={data.password}
+              onChange={handleInputChange}
+            ></input>
+          </div>
+          <div className={styles.SharedDiv}>
+            <div className={styles.RememberMe}>
+              <input
+                type="checkbox"
+                className={styles.checkBox}
+                checked={data.rememberMe}
+                onChange={handleCheckboxChange}
+              ></input>
+              <div>Remember me</div>
+            </div>
+            <div
+              className={styles.ForgotPassword}
+              onClick={handleForgotPassword}
+            >
+              Forgot password
+            </div>
+          </div>
+          <div className={styles.SigninButton} onClick={handleSubmit}>
+            Login
+          </div>
+          <div className={styles.textForRouting}>
+            Dont have an account?
+            <div
+              className={styles.SignupButton}
+              onClick={() => {
+                navigate("/signup");
+              }}
+            >
+              Sign up
+            </div>
           </div>
         </div>
       </div>

@@ -65,75 +65,77 @@ function SignUp() {
 
   return (
     <>
-      <div className={styles.SignUpBox}>
-        <h1>Create new account</h1>
-        <div className={styles.Member}>
-          Already A Member?
-          <div
-            className={styles.LoginButton}
-            onClick={() => {
-              navigate("/login");
-            }}
-          >
-            Log in
+      <div className={styles.signupBody}>
+        <div className={styles.SignUpBox}>
+          <h1>Create new account</h1>
+          <div className={styles.Member}>
+            Already A Member?
+            <div
+              className={styles.LoginButton}
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Log in
+            </div>
           </div>
-        </div>
-        <div className={styles.Name}>
-          <div className={styles.firstName}>
-            <label>First Name</label>
+          <div className={styles.Name}>
+            <div className={styles.firstName}>
+              <label>First Name</label>
+              <input
+                type="text"
+                placeholder="First Name"
+                name="name"
+                value={form.name}
+                onChange={handleInputChange}
+              ></input>
+            </div>
+            <div className={styles.lastName}>
+              <label>Last Name</label>
+              <input
+                type="text"
+                placeholder="Last Name"
+                name="lastName"
+                value={form.lastName}
+                onChange={handleInputChange}
+              ></input>
+            </div>
+          </div>
+          <div className={styles.Email}>
+            <label>Email</label>
             <input
-              type="text"
-              placeholder="First Name"
-              name="name"
-              value={form.name}
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={form.email}
               onChange={handleInputChange}
             ></input>
           </div>
-          <div className={styles.lastName}>
-            <label>Last Name</label>
-            <input
-              type="text"
-              placeholder="Last Name"
-              name="lastName"
-              value={form.lastName}
-              onChange={handleInputChange}
-            ></input>
+          <div className={styles.Password}>
+            <div className={styles.PasswordInput}>
+              <label>Password</label>
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={form.password}
+                onChange={handleInputChange}
+              ></input>
+            </div>
+            <div className={styles.ConfirmPassword}>
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={form.confirmPassword}
+                onChange={handleInputChange}
+              ></input>
+            </div>
           </div>
-        </div>
-        <div className={styles.Email}>
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={form.email}
-            onChange={handleInputChange}
-          ></input>
-        </div>
-        <div className={styles.Password}>
-          <div className={styles.PasswordInput}>
-            <label>Password</label>
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={form.password}
-              onChange={handleInputChange}
-            ></input>
+          <div className={styles.CreateButton} onClick={handleSubmit}>
+            Create account
           </div>
-          <div className={styles.ConfirmPassword}>
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              name="confirmPassword"
-              value={form.confirmPassword}
-              onChange={handleInputChange}
-            ></input>
-          </div>
-        </div>
-        <div className={styles.CreateButton} onClick={handleSubmit}>
-          Create account
         </div>
       </div>
     </>

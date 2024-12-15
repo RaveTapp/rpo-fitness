@@ -14,7 +14,7 @@ function MembershipPlan() {
 
         <div className={styles.cards}>
           <div className={styles.firstCard}>
-            <p className={styles.headerText}>Free Trail</p>
+            <p className={styles.headerText}>Free Trial</p>
             <p>30 days only</p>
             <hr className={styles.line}></hr>
             <div className={styles.freeComponents}>
