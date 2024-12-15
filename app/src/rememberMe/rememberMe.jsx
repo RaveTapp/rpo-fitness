@@ -6,7 +6,14 @@ function RememberMe() {
 
   return (
     <>
-      <div className={styles.rememberMeDiv}>test</div>
+      <div className={styles.rememberMeDiv}>
+        <div className={styles.rememberMeBox}>
+          <h1 className={styles.headerText}>Enter your code here:</h1>
+          <div className={styles.input}>
+            <input type="text" placeholder="Enter your code here"></input>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
