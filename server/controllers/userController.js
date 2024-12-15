@@ -61,18 +61,18 @@ const createToken = (user) => {
   }
 };
 
-const setCookie = (res, token) => {
+const setCookie = (res, token, age) => {
   res.cookie("authToken", token, {
     httpOnly: true,
     sameSite: "strict",
-    maxAge: 3600000,
+    maxAge: age,
   });
   console.log("Piškotek nastavljen");
 };
 
 const approveUser = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, rememberMe } = req.body;
 
     // Poišči uporabnika z email naslovom
     const user = await db.getEmail(email);
@@ -89,7 +89,15 @@ const approveUser = async (req, res) => {
 
     // Uspesna prijava
     const token = createToken(user);
-    setCookie(res, token);
+
+    let age;
+    if (rememberMe) {
+      age = 365 * 24 * 60 * 60 * 1000;
+    } else {
+      age = 3600000;
+    }
+
+    setCookie(res, token, age);
 
     res.status(200).json({
       message: "Uspešna prijava",

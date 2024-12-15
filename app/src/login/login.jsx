@@ -8,11 +8,16 @@ function Login() {
   const [data, setData] = useState({
     email: "",
     password: "",
+    rememberMe: false,
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
+  };
+
+  const handleCheckboxChange = (e) => {
+    setData({ ...data, rememberMe: e.target.checked });
   };
 
   const handleSubmit = async () => {
@@ -25,6 +30,7 @@ function Login() {
         body: JSON.stringify({
           email: data.email,
           password: data.password,
+          rememberMe: data.rememberMe,
         }),
         credentials: "include",
       });
@@ -73,7 +79,12 @@ function Login() {
         </div>
         <div className={styles.SharedDiv}>
           <div className={styles.RememberMe}>
-            <input type="checkbox" className={styles.checkBox}></input>
+            <input
+              type="checkbox"
+              className={styles.checkBox}
+              checked={data.rememberMe}
+              onChange={handleCheckboxChange}
+            ></input>
             <div>Remember me</div>
           </div>
           <div className={styles.ForgotPassword}>Forgot password</div>
