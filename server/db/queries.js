@@ -87,6 +87,20 @@ async function getEmail(email) {
   return result.rows[0] || null;
 }
 
+//Workout
+
+async function addWorkout(name, user) {
+  try {
+    await pool.query(
+      "INSERT INTO vadba (ime, fk_uporabnik) VALUES ($1, $2)",
+      [name, user]
+    );
+    console.log("Workout added to database");
+  } catch (error) {
+    console.error("Error adding workout to database:", error);
+  }
+}
+
 module.exports = {
   getAll,
   addCategory,
@@ -100,4 +114,5 @@ module.exports = {
   deleteProduct,
   addUser,
   getEmail,
+  addWorkout,
 };

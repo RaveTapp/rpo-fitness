@@ -1,12 +1,15 @@
 const { Router } = require("express");
 const router = Router();
 const userController = require("../controllers/userController");
+const workoutController = require("../controllers/workoutController");
 
 router.get("/", userController.testGet);
 
 router.post("/signup", userController.registerUser);
 
 router.post("/login", userController.approveUser);
+
+router.post("/addWorkout", workoutController.workoutCreatePost);
 
 module.exports = router;
 
