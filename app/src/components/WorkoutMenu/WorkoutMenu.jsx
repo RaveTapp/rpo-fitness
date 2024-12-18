@@ -14,19 +14,13 @@ export function WorkoutMenu() {
             <hr className={MenuCSS.hr} />
             <ul>
                 <li className={MenuCSS.item}>
-                    <Link to="/workout/1">
-                        <WorkoutItem title={"Leg day A"} />
-                    </Link>
+                    <WorkoutItem title={"Leg day A"} n="1" />
                 </li>
                 <li className={MenuCSS.item}>
-                    <Link to="/workout/2">
-                        <WorkoutItem title={"Leg day B"}  />
-                    </Link>
+                    <WorkoutItem title={"Leg day B"} n="2" />
                 </li>
                 <li className={MenuCSS.item}>
-                    <Link to="/workout/3">
-                        <WorkoutItem title={"Leg day C"}  />
-                    </Link>
+                    <WorkoutItem title={"Leg day C"} n="3" />
                 </li>
             </ul>
             <PlusBtn />
