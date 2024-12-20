@@ -1,10 +1,35 @@
 import PlusBtnCSS from "./plusBtn.module.css"
 
+async function sendToDB(msg){
+        try {
+          const response = await fetch("http://localhost:3000/addWorkout", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: msg,
+              user: 1
+            }),
+          });
+    
+          const data = await response.json();
+    
+          if (!response.ok) {
+            console.log(data.error);
+          } else {
+            console.log(data.message);
+          }
+        } catch (error) {
+          console.log("Error: ", error.message);
+        }
+}
+
 function plusPrompt(){
     let p = prompt("Vnesi naslov:");
 
     if(p != null && p != ""){
-        alert(p);
+        sendToDB(p);
     }
 }
 
