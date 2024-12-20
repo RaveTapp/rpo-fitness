@@ -30,7 +30,7 @@ export function WorkoutList(props) {
                         <WorkoutItem title="Leg Curls" />
                     </li>
                 </ul>
-                <PlusBtn />
+                <PlusBtn isWorkout={false} />
             </div>
 
             <Outlet />

@@ -10,7 +10,18 @@ const workoutCreatePost = async (req, res) => {
     }
 };
 
+const exerciseCreatePost = async (req, res) => {
+  try {
+    const { name, desc } = req.body;
+    await db.addExercise(name, desc);
+    res.status(200).json({ message: "Uspešno dodana vaja" });
+  } catch (error) {
+    res.status(500).json({ error: "Napaka, neuspešno dodajanje vaje" });
+  }
+};
+
 
 module.exports = {
     workoutCreatePost,
+    exerciseCreatePost,
 };

@@ -101,6 +101,18 @@ async function addWorkout(name, user) {
   }
 }
 
+async function addExercise(name, desc) {
+  try {
+    await pool.query(
+      "INSERT INTO vaja (ime, opis) VALUES ($1, $2)",
+      [name, desc]
+    );
+    console.log("Exercise added to database");
+  } catch (error) {
+    console.error("Error adding exercise to database:", error);
+  }
+}
+
 module.exports = {
   getAll,
   addCategory,
@@ -115,4 +127,5 @@ module.exports = {
   addUser,
   getEmail,
   addWorkout,
+  addExercise,
 };

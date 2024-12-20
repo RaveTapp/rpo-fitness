@@ -10,6 +10,7 @@ router.post("/signup", userController.registerUser);
 router.post("/login", userController.approveUser);
 
 router.post("/addWorkout", workoutController.workoutCreatePost);
+router.post("/addExercise", workoutController.exerciseCreatePost);
 
 module.exports = router;
 

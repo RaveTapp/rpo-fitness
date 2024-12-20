@@ -23,7 +23,7 @@ export function WorkoutMenu() {
                     <WorkoutItem title={"Leg day C"} n="3" />
                 </li>
             </ul>
-            <PlusBtn />
+            <PlusBtn isWorkout={true} />
         </div>
     );
 }
