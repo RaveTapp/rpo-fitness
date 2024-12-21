@@ -20,8 +20,19 @@ const exerciseCreatePost = async (req, res) => {
   }
 };
 
+const getTable = async (req, res) => {
+  try {
+    const { name } = req.body;
+    const rows = await db.getAll(name);
+    res.status(200).json({ rows });
+  } catch (error) {
+    res.status(500).json({ error: "Napaka, neuspešno pridobivanje tabele" });
+  }
+};
+
 
 module.exports = {
     workoutCreatePost,
     exerciseCreatePost,
+    getTable,
 };

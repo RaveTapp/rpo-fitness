@@ -9,6 +9,9 @@ router.post("/signup", userController.registerUser);
 
 router.post("/login", userController.approveUser);
 
+router.post("/workouts", workoutController.getTable);
+router.post("/exercises", workoutController.getTable);
+
 router.post("/addWorkout", workoutController.workoutCreatePost);
 router.post("/addExercise", workoutController.exerciseCreatePost);
 

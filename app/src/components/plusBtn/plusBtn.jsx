@@ -59,6 +59,7 @@ function plusPrompt(props){
         } else {
             sendExerciseToDB(p);
         }   
+        window.location.reload();
     }
 }
 
