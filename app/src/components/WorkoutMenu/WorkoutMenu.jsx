@@ -4,7 +4,7 @@ import { PlusBtn } from "../plusBtn/plusBtn";
 import MenuCSS from "./WorkoutMenu.module.css"
 import CSS from "../../main.module.css"
 
-async function getTable(table, setData){
+export async function getTable(table, setData){
     try {
         const response = await fetch(`http://localhost:3000/workouts`, {
         method: "POST",
@@ -44,7 +44,7 @@ export function WorkoutMenu() {
         workouts.forEach((e, i) => {
             workoutsList.push(
                 <li className={MenuCSS.item} key={e.ime + i + '1'} >
-                    <WorkoutItem title={e.ime} n={i+1}  key={e.ime + '2'}/>
+                    <WorkoutItem title={e.ime} n={i+1}  key={e.ime + i + '2'}/>
                 </li>
             );
         });
