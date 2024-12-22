@@ -117,6 +117,14 @@ async function deleteWorkout(name) {
   try {
     await pool.query("DELETE FROM vadba WHERE id=(SELECT id FROM vadba WHERE ime=$1)", [name]);
   } catch (error) {
+    console.error("Error removing workout from database:", error); 
+  }
+}
+
+async function deleteExercise(name) {
+  try {
+    await pool.query("DELETE FROM vaja WHERE id=(SELECT id FROM vaja WHERE ime=$1)", [name]);
+  } catch (error) {
     console.error("Error removing exercise from database:", error); 
   }
 }
@@ -137,4 +145,5 @@ module.exports = {
   addWorkout,
   addExercise,
   deleteWorkout,
+  deleteExercise,
 };

@@ -30,6 +30,16 @@ const exerciseCreatePost = async (req, res) => {
   }
 };
 
+const exerciseDeletePost = async (req, res) => {
+  try {
+    const { name } = req.body;
+    await db.deleteExercise(name);
+    res.status(200).json({ message: "Uspešno odstranjena vaja" });
+  } catch (error) {
+    res.status(500).json({ error: "Napaka, neuspešno odstranjevanje vaje" });
+  }
+};
+
 const getTable = async (req, res) => {
   try {
     const { name } = req.body;
@@ -47,5 +57,6 @@ module.exports = {
     workoutCreatePost,
     workoutDeletePost,
     exerciseCreatePost,
+    exerciseDeletePost,
     getTable,
 };
