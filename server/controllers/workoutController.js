@@ -10,6 +10,16 @@ const workoutCreatePost = async (req, res) => {
     }
 };
 
+const workoutDeletePost = async (req, res) => {
+  try {
+    const { name } = req.body;
+    await db.deleteWorkout(name);
+    res.status(200).json({ message: "Uspešno odstranjena vadba" });
+  } catch (error) {
+    res.status(500).json({ error: "Napaka, neuspešno odstranjevanje vadbe" });
+  }
+};
+
 const exerciseCreatePost = async (req, res) => {
   try {
     const { name, desc } = req.body;
@@ -31,8 +41,11 @@ const getTable = async (req, res) => {
 };
 
 
+
+
 module.exports = {
     workoutCreatePost,
+    workoutDeletePost,
     exerciseCreatePost,
     getTable,
 };

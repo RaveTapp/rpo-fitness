@@ -113,6 +113,14 @@ async function addExercise(name, desc) {
   }
 }
 
+async function deleteWorkout(name) {
+  try {
+    await pool.query("DELETE FROM vadba WHERE id=(SELECT id FROM vadba WHERE ime=$1)", [name]);
+  } catch (error) {
+    console.error("Error removing exercise from database:", error); 
+  }
+}
+
 module.exports = {
   getAll,
   addCategory,
@@ -128,4 +136,5 @@ module.exports = {
   getEmail,
   addWorkout,
   addExercise,
+  deleteWorkout,
 };

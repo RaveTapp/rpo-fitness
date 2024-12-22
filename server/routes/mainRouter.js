@@ -15,6 +15,8 @@ router.post("/exercises", workoutController.getTable);
 router.post("/addWorkout", workoutController.workoutCreatePost);
 router.post("/addExercise", workoutController.exerciseCreatePost);
 
+router.post("/deleteWorkout", workoutController.workoutDeletePost);
+
 module.exports = router;
 
 // router.get("/create", categoriesController.categoriesCreateGet);
