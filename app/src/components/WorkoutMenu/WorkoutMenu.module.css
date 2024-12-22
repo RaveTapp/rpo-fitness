@@ -39,7 +39,11 @@
 
 .dots:hover {
     fill: #ffffff91;
+    cursor: pointer;
+}
 
+.activeDots:hover {
+    cursor: pointer;
 }
 
 .activeDots {
@@ -71,7 +75,20 @@
 }
 
 .active {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.active svg {
+    width: 24px;
+    height: 24px;
+}
+
+.active:hover {
+    cursor: pointer;
 }
 
 .redText {
