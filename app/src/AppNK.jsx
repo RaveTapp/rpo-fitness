@@ -28,7 +28,7 @@ function AppNK() {
   }, []);
 
   return (
-    <>
+    <div className={styles["app-container"]}>
       {showWelcome && (
         <div className={styles.welcome}>
           <h1 className={styles["welcome-text"]}>Welcome Back, NAME</h1>
@@ -60,7 +60,7 @@ function AppNK() {
           <Footer />
         </>
       )}
-    </>
+    </div>
   );
 }
 
