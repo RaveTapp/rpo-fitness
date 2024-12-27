@@ -1,11 +1,11 @@
-header {
+.headerContainer {
     display: flex;
     justify-content: flex-end; /* Push items to the right */
     align-items: center; /* Center items vertically */
     padding: 10px 20px;
 }
 
-nav ul {
+.headerContainer nav ul {
     display: flex;
     list-style: none;
     margin: 0;
@@ -13,21 +13,20 @@ nav ul {
     align-items: center;
 }
 
-nav li {
-    margin: 0 24px; /* Spacing med posameznimi <li>*/
+.headerContainer nav li {
+    margin: 0 24px; /* Spacing between <li> elements */
     font-size: 24px; 
     cursor: pointer;
     font-weight: bold;
     color: whitesmoke;
 }
 
-nav a {
+.headerContainer nav a {
     text-decoration: none;
     color: whitesmoke;    
 }
 
-
-nav .premium {
+.headerContainer nav .premium {
     background-color: #92ACE5; 
     color: whitesmoke; 
     font-weight: bold; 
@@ -38,13 +37,13 @@ nav .premium {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-nav .premium:hover {
+.headerContainer nav .premium:hover {
     background-color: whitesmoke;
     color: #000;
     border: #000;
 }
 
-nav .profile {
+.headerContainer nav .profile {
     background-color: transparent; 
     color: whitesmoke; 
     font-weight: bold; 
@@ -55,31 +54,32 @@ nav .profile {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-nav .profile:hover {
+.headerContainer nav .profile:hover {
     background-color: #92ACE5;
     color: whitesmoke;
     border: 3px solid #7186B2; 
-
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    header {
+    .headerContainer {
         justify-content: center;
     }
 
-    nav ul {
+    .headerContainer nav ul {
         flex-direction: column;
         align-items: center;
         width: 100%;
         text-align: center;
     }
 
-    nav li {
+    .headerContainer nav li {
         margin: 10px 0; 
         font-size: 20px;
     }
 
-    nav .premium, nav .profile {
+    .headerContainer nav .premium, 
+    .headerContainer nav .profile {
         width: 100%; 
         text-align: center;
         padding: 12px 0;
@@ -87,22 +87,22 @@ nav .profile:hover {
     }
 }
 
-
 @media (max-width: 480px) {
-    header {
+    .headerContainer {
         padding: 8px 10px;
     }
 
-    nav ul {
+    .headerContainer nav ul {
         padding: 0;
     }
 
-    nav li {
+    .headerContainer nav li {
         font-size: 18px; 
         margin: 5px 0;
     }
 
-    nav .premium, nav .profile {
+    .headerContainer nav .premium, 
+    .headerContainer nav .profile {
         font-size: 14px; 
         padding: 10px 0;
     }

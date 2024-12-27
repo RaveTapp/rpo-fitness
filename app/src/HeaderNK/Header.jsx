@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './Header.module.css';
 
-
 function Header() {
     return (
-        <header className={styles.header}>
+        <header className={styles.headerContainer}>
             <nav>
                 <ul className={styles.ul}>
                     <li className={styles.li}>Exercise</li> 
