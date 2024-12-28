@@ -1,0 +1,10 @@
+.lineGraphBMI h2 {
+    color: black;
+}
+
+.lineGraphBMI {
+    color: whitesmoke;
+    background-color: whitesmoke; 
+    padding: 20px; 
+    border-radius: 10px; 
+  }

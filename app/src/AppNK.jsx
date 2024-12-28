@@ -7,6 +7,7 @@ import CalcBMI from "./CalcBMINK/CalcBMI.jsx";
 import exercisePic from "./assetsNK/exercise.webp";
 import nutritionPic from "./assetsNK/hrana1.jpg";
 import styles from "./AppNK.module.css";
+import LineChart from "./GraphBMINK/LineGraph.jsx";
 
 function AppNK() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -54,8 +55,13 @@ function AppNK() {
             />
           </div>
           <SectionName name="PROGRESS" />
-          <div>
-            <CalcBMI />
+          <div className={styles.bmiChartContainer}>
+            <div className={styles.bmiContainer}>
+              <CalcBMI />
+            </div>
+            <div className={styles.chartContainer}>
+              <LineChart />
+            </div>
           </div>
           <Footer />
         </>

@@ -37,6 +37,28 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
+.bmiChartContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adds space between the two elements */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.bmiContainer {
+  flex: 1; /* Makes the BMI calculator take up equal width */
+}
+
+.chartContainer {
+  color: whitesmoke;
+  /* background-color: whitesmoke; */
+  flex: 1; /* Makes the LineChart take up equal width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /* Fade-out animation */
 /* @keyframes fadeOut {
   0% {
