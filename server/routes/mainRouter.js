@@ -17,3 +17,4 @@ module.exports = router;
 // router.post("/:id/update", categoriesController.categoriesUpdatePost);
 
 // router.post("/:id/delete", categoriesController.categoriesDeleteGet);
+
