@@ -10,7 +10,7 @@ async function main() {
     host: "localhost",
     database: "rpo",
     password: process.env.PASS,
-    port: 5432,
+    port: process.env.PORT || 5432, 
   });
   await client.connect();
   await client.query(SQL);
