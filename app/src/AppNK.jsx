@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"; // Import Router components
 import Header from "./HeaderNK/Header.jsx";
 import Footer from "./FooterNK/Footer.jsx";
 import Card from "./CardNK/Card.jsx";
@@ -29,44 +30,46 @@ function AppNK() {
   }, []);
 
   return (
-    <div className={styles["app-container"]}>
-      {showWelcome && (
-        <div className={styles.welcome}>
-          <h1 className={styles["welcome-text"]}>Welcome Back, NAME</h1>
-        </div>
-      )}
+    <Router> 
+      <div className={styles["app-container"]}>
+        {showWelcome && (
+          <div className={styles.welcome}>
+            <h1 className={styles["welcome-text"]}>Welcome Back, NAME</h1>
+          </div>
+        )}
 
-      {showHomePage && (
-        <>
-          <Header />
-          <SectionName name="WELCOME BACK, NAME" />
-          <div className={styles.cards_container}>
-            <Card
-              imageSrc={exercisePic}
-              title="Exercise"
-              description="Learn about various exercises to stay fit and healthy!"
-              redirectUrl="/exercise"
-            />
-            <Card
-              imageSrc={nutritionPic}
-              title="Nutrition"
-              description="Discover healthy eating habits and nutritious meals!"
-              redirectUrl="/nutrition"
-            />
-          </div>
-          <SectionName name="PROGRESS" />
-          <div className={styles.bmiChartContainer}>
-            <div className={styles.bmiContainer}>
-              <CalcBMI />
+        {showHomePage && (
+          <>
+            <Header /> 
+            <SectionName name="WELCOME BACK, NAME" />
+            <div className={styles.cards_container}>
+              <Card
+                imageSrc={exercisePic}
+                title="Exercise"
+                description="Learn about various exercises to stay fit and healthy!"
+                redirectUrl="/exercise" 
+              />
+              <Card
+                imageSrc={nutritionPic}
+                title="Nutrition"
+                description="Discover healthy eating habits and nutritious meals!"
+                redirectUrl="/nutrition"
+              />
             </div>
-            <div className={styles.chartContainer}>
-              <LineChart />
+            <SectionName name="PROGRESS" />
+            <div className={styles.bmiChartContainer}>
+              <div className={styles.bmiContainer}>
+                <CalcBMI />
+              </div>
+              <div className={styles.chartContainer}>
+                <LineChart />
+              </div>
             </div>
-          </div>
-          <Footer />
-        </>
-      )}
-    </div>
+            <Footer />
+          </>
+        )}
+      </div>
+    </Router>
   );
 }
 
