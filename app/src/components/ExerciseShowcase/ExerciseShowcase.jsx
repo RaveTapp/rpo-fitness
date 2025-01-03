@@ -39,16 +39,10 @@ export function ExerciseShowcase(props) {
             getTableOffset("vaja", exerciseId, setData);
     }, []);
 
-    let title = [];
-    if (data.length != 0) {
-        let titleName = data.rows[0].ime;
-        title.push(<h1 className={`${CSS.tekst}`} key={titleName + '_title'} >{titleName}</h1>);
-    }
-
     return (
         <div className={ExerciseCSS.menu}>
             <div className={ExerciseCSS.mainTitle}>
-                {title}
+                <h1 className={`${CSS.tekst}`}>{data.length == 1 ? data.rows[0].ime : "Title not found"}</h1>
             </div>
             <div className={ExerciseCSS.imageContainer}>
                 <img src="" alt="" />
