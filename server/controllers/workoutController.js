@@ -50,6 +50,16 @@ const getTable = async (req, res) => {
   }
 };
 
+const getLimitOffsetTable = async (req, res) => {
+  try {
+    const { name, limit, offset } = req.body;
+    const rows = await db.getAllLimitOffset(name, limit, offset);
+    res.status(200).json({ rows });
+  } catch (error) {
+    res.status(500).json({ error: "Napaka, neuspešno pridobivanje tabele s tem limitom in offsetom" });
+  }
+};
+
 
 
 
@@ -59,4 +69,5 @@ module.exports = {
     exerciseCreatePost,
     exerciseDeletePost,
     getTable,
+    getLimitOffsetTable,
 };

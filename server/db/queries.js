@@ -5,6 +5,11 @@ async function getAll(table) {
   return rows;
 }
 
+async function getAllLimitOffset(table, limit, offset) {
+  const { rows } = await pool.query(`SELECT * FROM ${table} ORDER BY id limit ${limit} offset ${offset}`);
+  return rows;
+}
+
 //CATEGORY
 async function addCategory(category) {
   await pool.query("INSERT INTO category (name) VALUES ($1)", [category]);
@@ -131,6 +136,7 @@ async function deleteExercise(name) {
 
 module.exports = {
   getAll,
+  getAllLimitOffset,
   addCategory,
   getCategory,
   updateCategory,

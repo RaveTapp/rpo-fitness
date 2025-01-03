@@ -1,8 +1,9 @@
+import { useParams } from "react-router"
 import ExerciseCSS from "./ExerciseShowcase.module.css"
 import CSS from "../../main.module.css"
 
 export function ExerciseShowcase(props) {
-
+    let {exerciseId} = useParams();
 
     return (
         <div className={ExerciseCSS.menu}>

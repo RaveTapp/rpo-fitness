@@ -12,6 +12,8 @@ router.post("/login", userController.approveUser);
 router.post("/workouts", workoutController.getTable);
 router.post("/exercises", workoutController.getTable);
 
+router.post("/exercisesOffset", workoutController.getLimitOffsetTable);
+
 router.post("/addWorkout", workoutController.workoutCreatePost);
 router.post("/addExercise", workoutController.exerciseCreatePost);
 

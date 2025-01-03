@@ -13,7 +13,7 @@ export default function ReneMain() {
       <Route path="/" element={<Layout />}>
         <Route index element={<WorkoutMenu />} />
         <Route path=":workoutId" element={<WorkoutList />} > 
-          <Route index element={<ExerciseShowcase title="Barbell Lunge" exerText="Kinda annoyingly long text that is passed through props and ends up here, you know" />} />
+          <Route path="exercise/:exerciseId" element={<ExerciseShowcase title="Barbell Lunge" exerText="Kinda annoyingly long text that is passed through props and ends up here, you know" />} />
         </Route>
         <Route path="options" element={<OptionsMenu />} > 
           <Route index element={<OptionsWindow title="Weekly Sessions" />} />
