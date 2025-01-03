@@ -1,0 +1,88 @@
+.container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .glass {
+    width: 150px;
+    height: 300px;
+    border: 2px solid whitesmoke;
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .waterLevel {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #92ACE5;
+    transition: height 0.3s ease;
+    clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-end; */
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .intake {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #92ACE5;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .customInput {
+    margin-top: 10px;
+  }
+  
+  .customInput input {
+    width: 100px;
+    padding: 5px;
+    margin-right: 5px;
+  }
+  
+  .customInput button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: #92ACE5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .percentage {
+    margin-bottom: 5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .liters {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: whitesmoke;
+    margin: 10px 0;
+  }
+
+
+  .glassCount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: whitesmoke;
+    margin-top: 15px;
+  }
