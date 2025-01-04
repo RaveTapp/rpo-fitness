@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom"; // Import Router components
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"; // Import Router components
 import Header from "./HeaderNK/Header.jsx";
 import Footer from "./FooterNK/Footer.jsx";
 import Card from "./CardNK/Card.jsx";
