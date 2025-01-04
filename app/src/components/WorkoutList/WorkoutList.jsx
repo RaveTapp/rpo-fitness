@@ -25,7 +25,7 @@ export function WorkoutList(props) {
         exercises.forEach((e, i) => {
             exercisesList.push(
                 <li className={MenuCSS.item} key={e.ime + i + '1'} >
-                     <WorkoutItem title={e.ime} n="" isWorkout={false} key={e.ime + i + '2'}/>
+                     <WorkoutItem title={e.ime} n={i+1} isWorkout={false} key={e.ime + i + '2'}/>
                 </li>
             );
         });
