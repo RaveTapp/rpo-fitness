@@ -5,6 +5,8 @@ import App from './AppNK.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <Routes> 
+      <Route path="/" element={<App />} />
+    </Routes>
   </StrictMode>,
 )
