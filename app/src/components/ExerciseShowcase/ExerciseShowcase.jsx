@@ -50,12 +50,19 @@ export function ExerciseShowcase(props) {
     }, [data]);
 
     let description = [];
+    let imagesElem = [];
     if(Object.keys(exercise).length > 0){
         description.splice(0, description.length);
+        imagesElem.splice(0, description.length);
 
         exercise.instructions.forEach((e, i) => {
             description.push(<p className={`${CSS.tekst} ${ExerciseCSS.tekst}`} key={"exerciseDesc" + i}>{e}</p>);
         });
+
+        for(let i = 0; i < 2; i++) {
+            let url = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/" + exercise.images[i];
+            imagesElem.push(<img src={url} alt={data.rows[0].ime + " image " + (i+1)} />)
+        };
     }
 
     return (
@@ -64,8 +71,7 @@ export function ExerciseShowcase(props) {
                 <h1 className={`${CSS.tekst}`}>{Object.keys(data).length > 0 ? data.rows[0].ime : "Title not found"}</h1>
             </div>
             <div className={ExerciseCSS.imageContainer}>
-                <img src="" alt="" />
-                <img src="" alt="" />
+                {imagesElem}
             </div>
             {description}
         </div>

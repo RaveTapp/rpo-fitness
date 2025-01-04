@@ -23,7 +23,9 @@ async function deleteItem(itemName, isWorkout){
                 console.log(data.error);
             } else {
                 console.log(data.message);
-                window.location.reload();
+                let url = window.location.href;
+                let num = parseInt(url.substring(url.length-1)) - 1;
+                window.location.replace(window.location.href.substring(0, url.length-1) + num);
             }
         } catch (error) {
             console.log("Error: ", error.message);
