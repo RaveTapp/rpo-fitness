@@ -30,10 +30,9 @@ function CalcBMI() {
         }
 
         if (valid) {
-            const heightInMeters = parsedHeight / 100; 
+            const heightInMeters = parsedHeight / 100;
             const bmiValue = parsedWeight / (heightInMeters * heightInMeters);
-            setBmi(bmiValue.toFixed(2)); 
-
+            setBmi(bmiValue.toFixed(2));
 
             if (bmiValue < 18.5) {
                 setStatus('underweight');
@@ -58,18 +57,18 @@ function CalcBMI() {
     };
 
     return (
-        <div className={styles.BMI}>
+        <div className={styles.calcBMIContainer}>
             <h3>IZRAČUNAJ SVOJ BMI</h3>
 
             <div className={styles.inputGroup}>
                 <label htmlFor="weight">Teža (kg):</label>
                 <div className={styles.inputWithSlider}>
                     <input
-                        type="text" 
+                        type="text"
                         id="weight"
                         value={weight}
                         onChange={(e) => handleWeightInput(e.target.value)}
-                        className={`${styles.numberInput} ${weightError ? styles.errorInput : ''}`} 
+                        className={`${styles.numberInput} ${weightError ? styles.errorInput : ''}`}
                         placeholder="Teža"
                     />
                     <input
@@ -81,30 +80,30 @@ function CalcBMI() {
                         className={styles.slider}
                     />
                 </div>
-                {weightError && <p className={styles.errorText}>{weightError}</p>} 
+                {weightError && <p className={styles.errorText}>{weightError}</p>}
             </div>
 
             <div className={styles.inputGroup}>
                 <label htmlFor="height">Višina (cm):</label>
                 <div className={styles.inputWithSlider}>
                     <input
-                        type="text" 
+                        type="text"
                         id="height"
                         value={height}
                         onChange={(e) => handleHeightInput(e.target.value)}
-                        className={`${styles.numberInput} ${heightError ? styles.errorInput : ''}`} 
+                        className={`${styles.numberInput} ${heightError ? styles.errorInput : ''}`}
                         placeholder="Višina"
                     />
                     <input
                         type="range"
                         min="100"
                         max="220"
-                        value={parseFloat(height) || 100} 
+                        value={parseFloat(height) || 100}
                         onChange={(e) => setHeight(e.target.value)}
                         className={styles.slider}
                     />
                 </div>
-                {heightError && <p className={styles.errorText}>{heightError}</p>} 
+                {heightError && <p className={styles.errorText}>{heightError}</p>}
             </div>
 
             <button className={styles.calculateBtn} onClick={calculateBMI}>
@@ -115,7 +114,7 @@ function CalcBMI() {
                 <div className={styles.result}>
                     <p>Vaš BMI: {bmi}</p>
                     <div
-                        className={`${styles.bmiCircle} ${styles[status]}`} 
+                        className={`${styles.bmiCircle} ${styles[status]}`}
                     ></div>
                 </div>
             )}

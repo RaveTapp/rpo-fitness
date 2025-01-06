@@ -41,7 +41,7 @@ const categoriesDeleteGet = async (req, res) => {
 const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    await db.addUser(name, email, password);
+    await db.addUser(name, email, password); //klices querry queries.js
     res.status(200).json({ message: "Uporabnik se je uspesno prijavil" });
   } catch (error) {
     res.status(500).json({ error: "Uporabnik se ni uspesno prijavil" });
@@ -119,3 +119,6 @@ module.exports = {
   registerUser,
   approveUser,
 };
+
+
+// main funkcije, za vracanje statusov v main program na front-end, tu tudi klices svoje inserte pa selecte iz baze
