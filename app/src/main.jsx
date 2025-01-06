@@ -8,6 +8,7 @@ import Login from "./login/login";
 import ForgotPassword from "./forgotPassword/forgotPassword";
 import AppNK from "./AppNK";
 import Nutrition from "./Nutrition";
+import Payment from "./payment/payment";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/workout/*" element={<ReneMain />} />
         <Route path="/homepage" element={<AppNK />} />
         <Route path="/nutrition" element={<Nutrition />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </BrowserRouter>
   );
