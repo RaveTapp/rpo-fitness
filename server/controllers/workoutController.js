@@ -46,6 +46,7 @@ const getTable = async (req, res) => {
     const rows = await db.getAll(name);
     res.status(200).json({ rows });
   } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "Napaka, neuspešno pridobivanje tabele" });
   }
 };

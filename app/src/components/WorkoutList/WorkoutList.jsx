@@ -8,7 +8,7 @@ import { WorkoutItem } from "../WorkoutMenu/workoutItem";
 import { Outlet } from "react-router-dom";
 import { getTable } from "../WorkoutMenu/WorkoutMenu"
 
-export function WorkoutList(props) {
+export function WorkoutList() {
     let {workoutId} = useParams();
 
     const [data, setData] = useState([]);
@@ -19,10 +19,9 @@ export function WorkoutList(props) {
         getTable("vadba", setTitles);
     }, []);
     
-    let exercises = data.rows;
     let exercisesList = [];
-    if(exercises) {
-        exercises.forEach((e, i) => {
+    if(data) {
+        data.forEach((e, i) => {
             exercisesList.push(
                 <li className={MenuCSS.item} key={e.ime + i + '1'} >
                      <WorkoutItem title={e.ime} n={i+1} isWorkout={false} key={e.ime + i + '2'}/>
@@ -32,7 +31,7 @@ export function WorkoutList(props) {
     }
     let title = [];
     if (titles.length != 0) {
-        let titleName = titles.rows[workoutId-1].ime;
+        let titleName = titles[workoutId-1].ime;
         title.push(<h1 className={`${CSS.tekst}`} key={titleName + '_title'} >{titleName}</h1>);
     }
 

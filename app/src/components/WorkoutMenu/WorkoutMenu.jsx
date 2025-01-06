@@ -20,9 +20,9 @@ export async function getTable(table, setData){
 
         if (!response.ok) {
             console.log(data.error);
-        } else {
+        } else if (data && data.rows) {
             console.log(data.rows);
-            setData(data);
+            setData(data.rows);
         }
     } catch (error) {
         console.log("Error: ", error.message);
@@ -36,12 +36,9 @@ export function WorkoutMenu() {
         getTable("vadba", setData);
       }, []);
 
-    
-    let workouts = data.rows;
-
     let workoutsList = [];
-    if(workouts) {
-        workouts.forEach((e, i) => {
+    if(data) {
+        data.forEach((e, i) => {
             workoutsList.push(
                 <li className={MenuCSS.item} key={e.ime + i + '1'} >
                     <WorkoutItem title={e.ime} n={i+1} isWorkout={true}  key={e.ime + i + '2'}/>
