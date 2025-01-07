@@ -7,6 +7,7 @@
     background-color: var(--mid-bright-blue-color);
     border-radius: 12px;
     width: max(40%, 310px);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.2);
 }
 
 .mainTitle {
@@ -17,8 +18,9 @@
 
 .imageContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 1.5vw;
 }
 
 .imageContainer img {
@@ -28,4 +30,5 @@
 
 .tekst {
     text-align: center;
+    padding: 12px;
 }

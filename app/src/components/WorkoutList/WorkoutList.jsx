@@ -36,7 +36,7 @@ export function WorkoutList() {
     }
 
     return (
-        <>
+        <div className={MenuCSS.menuContainer}>
             <div className={ListCSS.menu}>
                 <div className={ListCSS.mainTitle}>
                     {title}
@@ -49,6 +49,6 @@ export function WorkoutList() {
             </div>
 
             <Outlet />
-        </>
+        </div>
     );
 }

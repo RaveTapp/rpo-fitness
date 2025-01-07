@@ -7,6 +7,8 @@
     background-color: var(--mid-bright-blue-color);
     border-radius: 12px;
     width: max(40%, 310px);
+    margin-right: 24px;
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.2);
 }
 
 .mainTitle{
