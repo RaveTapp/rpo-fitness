@@ -1,6 +1,17 @@
 import styles from "./payment.module.css";
+import { useState } from "react";
 
 function Payment() {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
+
+  const test = () => {
+    console.log("test");
+  };
+
   return (
     <>
       <div className={styles.paymentBody}>
@@ -16,15 +27,43 @@ function Payment() {
               <option value="yearly">Yearly</option>
               <option value="freeTrial">Free Trial</option>
             </select>
-            {/* <div className={styles.subscriptionType}>
+            <div className={styles.payment}>
               <div>Payment</div>
-            </div> */}
-            <div className={styles.sharedDiv}>
-              <div className={styles.terms}>
-                <input type="checkbox" className={styles.checkBox}></input>
-                <div>I accept the terms</div>
+              <div className={styles.radioButtons}>
+                <label>
+                  <input type="radio" name="paymentOption" value="creditCard" />
+                  Credit Card
+                </label>
+                <label>
+                  <input type="radio" name="paymentOption" value="paypal" />
+                  PayPal
+                </label>
+                <label>
+                  <input type="radio" name="paymentOption" value="bankvv" />
+                  Bank Payment
+                </label>
               </div>
             </div>
+            <div className={styles.sharedDiv}>
+              <div className={styles.terms}>
+                <input
+                  type="checkbox"
+                  className={styles.checkBox}
+                  onChange={handleCheckboxChange}
+                ></input>
+                <div className={styles.text}>
+                  <div>I accept the terms</div>
+                  <div> X$</div>
+                </div>
+              </div>
+            </div>
+            <button
+              disabled={!isChecked}
+              className={styles.subsctiption}
+              onClick={test}
+            >
+              Submit Payment
+            </button>
           </div>
         </div>
       </div>
