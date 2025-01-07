@@ -6,7 +6,17 @@
 .menu {
     background-color: var(--mid-bright-blue-color);
     border-radius: 12px;
-    width: max(60%, 310px);
+    width: max(50%, 310px);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.2); 
+}
+
+.menuContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom right, #31394c, var(--main-bg-color));
 }
 
 .mainTitle{

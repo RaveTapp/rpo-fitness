@@ -48,15 +48,17 @@ export function WorkoutMenu() {
     }
 
     return (
-        <div className={MenuCSS.menu}>
-            <div className={MenuCSS.mainTitle}>
-                <h1 className={CSS.tekst}>SAVED WORKOUTS</h1>
+        <div className={MenuCSS.menuContainer}>
+            <div className={MenuCSS.menu}>
+                <div className={MenuCSS.mainTitle}>
+                    <h1 className={CSS.tekst}>SAVED WORKOUTS</h1>
+                </div>
+                <hr className={MenuCSS.hr} />
+                <ul>
+                    {workoutsList}
+                </ul>
+                <PlusBtn isWorkout={true} />
             </div>
-            <hr className={MenuCSS.hr} />
-            <ul>
-                {workoutsList}
-            </ul>
-            <PlusBtn isWorkout={true} />
         </div>
     );
 }
