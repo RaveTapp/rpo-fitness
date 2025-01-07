@@ -25,8 +25,7 @@ async function getTableOffset(table, n, setData){
         if (!response.ok) {
             console.log(data.error);
         } else {
-            console.log(data.rows);
-            setData(data);
+            setData(data.rows);
         }
     } catch (error) {
         console.log("Error: ", error.message);
@@ -45,7 +44,7 @@ export function ExerciseShowcase(props) {
 
     useEffect(() => {
         if(Object.keys(data).length > 0){
-            getExerciseJSON(data.rows[0].ime, setExercise);
+            getExerciseJSON(data[0].ime, setExercise);
         }
     }, [data]);
 
@@ -61,14 +60,14 @@ export function ExerciseShowcase(props) {
 
         for(let i = 0; i < 2; i++) {
             let url = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/" + exercise.images[i];
-            imagesElem.push(<img src={url} alt={data.rows[0].ime + " image " + (i+1)} />)
+            imagesElem.push(<img src={url} alt={data[0].ime + " image " + (i+1)} key={data[0].ime + " image " + (i+1)} />)
         };
     }
 
     return (
         <div className={ExerciseCSS.menu}>
             <div className={ExerciseCSS.mainTitle}>
-                <h1 className={`${CSS.tekst}`}>{Object.keys(data).length > 0 ? data.rows[0].ime : "Title not found"}</h1>
+                <h1 className={`${CSS.tekst}`}>{Object.keys(data).length > 0 ? data[0].ime : "Title not found"}</h1>
             </div>
             <div className={ExerciseCSS.imageContainer}>
                 {imagesElem}
