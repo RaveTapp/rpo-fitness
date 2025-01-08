@@ -56,7 +56,7 @@ function SignUp() {
         console.log(data.error);
       } else {
         console.log(data.message);
-        navigate("/");
+        navigate("/homepage");
       }
     } catch (error) {
       console.log("Error: ", error.message);

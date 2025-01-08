@@ -1,6 +1,8 @@
 import styles from "./MembershipPlan.module.css";
+import { useNavigate } from "react-router-dom";
 
 function MembershipPlan() {
+  const navigate = useNavigate();
   return (
     <>
       <div className={styles.MembershipPlan}>
@@ -35,7 +37,14 @@ function MembershipPlan() {
               <p>Challenge Creation</p>
               <p>Easy Nutrition Tracking</p>
             </div>
-            <div className={styles.buttonJoin}>Join</div>
+            <div
+              className={styles.buttonJoin}
+              onClick={() => {
+                navigate("/payment");
+              }}
+            >
+              Join
+            </div>
           </div>
         </div>
       </div>
