@@ -20,6 +20,9 @@ router.post("/addExercise", workoutController.exerciseCreatePost);
 router.post("/deleteWorkout", workoutController.workoutDeletePost);
 router.post("/deleteExercise", workoutController.exerciseDeletePost);
 
+router.post("/editWorkout", workoutController.workoutEditPost);
+router.post("/editExercise", workoutController.exerciseEditPost);
+
 module.exports = router;
 
 // router.get("/create", categoriesController.categoriesCreateGet);

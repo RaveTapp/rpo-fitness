@@ -13,7 +13,8 @@ async function deleteItem(itemName, isWorkout){
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                name: itemName
+                name: itemName,
+                oldName: old
             }),
             });
     

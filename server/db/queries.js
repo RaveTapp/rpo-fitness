@@ -134,6 +134,22 @@ async function deleteExercise(name) {
   }
 }
 
+async function editWorkout(name, oldName){
+  try {
+    await pool.query("UPDATE vadba SET ime=$1 WHERE id=(SELECT id FROM vadba WHERE ime=$2)", [name, oldName]);
+  } catch (error) {
+    console.error("Error removing exercise from database:", error); 
+  }
+}
+
+async function editExercise(name, oldName){
+  try {
+    await pool.query("UPDATE vaja SET ime=$1 WHERE id=(SELECT id FROM vaja WHERE ime=$2)", [name, oldName]);
+  } catch (error) {
+    console.error("Error removing exercise from database:", error); 
+  }
+}
+
 module.exports = {
   getAll,
   getAllLimitOffset,
@@ -152,4 +168,6 @@ module.exports = {
   addExercise,
   deleteWorkout,
   deleteExercise,
+  editWorkout,
+  editExercise,
 };
