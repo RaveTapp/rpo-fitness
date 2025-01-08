@@ -6,19 +6,28 @@ import { ExerciseShowcase } from "./components/ExerciseShowcase/ExerciseShowcase
 import { OptionsMenu } from "./components/OptionsMenu/OptionsMenu";
 import { OptionsWindow } from "./components/OptionsWindow/OptionsWindow";
 import { Layout } from "./components/Layout/Layout";
+import ErrorPage from "./components/Error/ErrorPage";
+import ErrorBoundary from "./components/Error/ErrorBoundary";
 
 export default function ReneMain() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<WorkoutMenu />} />
-        <Route path=":workoutId" element={<WorkoutList />} > 
-          <Route path="exercise/:exerciseId" element={<ExerciseShowcase exerText="Kinda annoyingly long text that is passed through props and ends up here, you know" />} />
+        <Route path="/" element={<Layout />} errorElement={<ErrorPage />} >
+          <Route element={
+              <ErrorBoundary fallback={<p>Error Boundary</p>}>
+                <React.Fragment />
+              </ErrorBoundary>
+            }
+          >
+            <Route index element={<WorkoutMenu />} />
+            <Route path=":workoutId" element={<WorkoutList />} > 
+              <Route path="exercise/:exerciseId" element={<ExerciseShowcase exerText="Kinda annoyingly long text that is passed through props and ends up here, you know" />} />
+            </Route>
+            <Route path="options" element={<OptionsMenu />} > 
+              <Route index element={<OptionsWindow title="Weekly Sessions" />} />
+            </Route>
+          </Route>
         </Route>
-        <Route path="options" element={<OptionsMenu />} > 
-          <Route index element={<OptionsWindow title="Weekly Sessions" />} />
-        </Route>
-      </Route>
     </Routes>
   );
 }

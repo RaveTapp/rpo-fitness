@@ -11,6 +11,10 @@ import { getTable } from "../WorkoutMenu/WorkoutMenu"
 export function WorkoutList() {
     let {workoutId} = useParams();
 
+    if(isNaN(workoutId) || workoutId < 1){
+        throw Error("workoutId not selected properly.");
+    }
+
     const [data, setData] = useState([]);
     const [titles, setTitles] = useState([]);
     
