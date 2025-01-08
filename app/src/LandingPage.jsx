@@ -8,16 +8,16 @@ function LandingPage() {
   return (
     <>
       <div>
-        <div className={styles.first_div}>
+        <div className={styles.first_div} id="top">
           <NavBar />
         </div>
-        <div className={styles.AppOffers}>
+        <div className={styles.AppOffers} id="appOffers">
           <AppOffers />
         </div>
         <div className={styles.ChooseUs}>
           <ChooseUs />
         </div>
-        <div className={styles.MembershipPlan}>
+        <div className={styles.MembershipPlan} id="membershipPlan">
           <MembershipPlan />
         </div>
       </div>
