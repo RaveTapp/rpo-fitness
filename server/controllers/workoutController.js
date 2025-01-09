@@ -1,13 +1,13 @@
 const db = require("../db/queries");
 
 const workoutCreatePost = async (req, res) => {
-    try {
-      const { name, user } = req.body;
-      await db.addWorkout(name, user);
-      res.status(200).json({ message: "Uspešno dodana vadba" });
-    } catch (error) {
-      res.status(500).json({ error: "Napaka, neuspešno dodajanje vadbe" });
-    }
+  try {
+    const { name, user } = req.body;
+    await db.addWorkout(name, user);
+    res.status(200).json({ message: "Uspešno dodana vadba" });
+  } catch (error) {
+    res.status(500).json({ error: "Napaka, neuspešno dodajanje vadbe" });
+  }
 };
 
 const workoutDeletePost = async (req, res) => {
@@ -77,22 +77,19 @@ const getLimitOffsetTable = async (req, res) => {
     const rows = await db.getAllLimitOffset(name, limit, offset);
     res.status(200).json({ rows });
   } catch (error) {
-    res.status(500).json({ error: "Napaka, neuspešno pridobivanje tabele s tem limitom in offsetom" });
+    res.status(500).json({
+      error: "Napaka, neuspešno pridobivanje tabele s tem limitom in offsetom",
+    });
   }
 };
 
-
-
-
-
-
 module.exports = {
-    workoutCreatePost,
-    workoutDeletePost,
-    workoutEditPost,
-    exerciseCreatePost,
-    exerciseDeletePost,
-    exerciseEditPost,
-    getTable,
-    getLimitOffsetTable,
+  workoutCreatePost,
+  workoutDeletePost,
+  workoutEditPost,
+  exerciseCreatePost,
+  exerciseDeletePost,
+  exerciseEditPost,
+  getTable,
+  getLimitOffsetTable,
 };
