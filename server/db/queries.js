@@ -102,6 +102,26 @@ async function editExercise(name, oldName) {
   }
 }
 
+///////////////////////////// NIK BMI
+async function addBMIRecord(userId, teza, visina) {
+  try {
+    const datum = new Date();
+    await pool.query(
+      "INSERT INTO bmi (datum, teza, visina, fk_uporabnik) VALUES ($1, $2, $3, $4)",
+      [datum, teza, visina, userId]
+    );
+    console.log("BMI zapis uspešno dodan");
+  } catch (error) {
+    console.error("Napaka pri dodajanju BMI zapisa:", error);
+  }
+}
+
+
+async function getAllBMIRecords() {
+  const { rows } = await pool.query("SELECT * FROM bmi");
+  return rows;
+}
+
 module.exports = {
   getAll,
   getAllLimitOffset,
@@ -113,4 +133,6 @@ module.exports = {
   deleteExercise,
   editWorkout,
   editExercise,
-};
+  addBMIRecord,
+  getAllBMIRecords,
+}

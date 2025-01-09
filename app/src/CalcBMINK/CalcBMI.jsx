@@ -9,6 +9,28 @@ function CalcBMI() {
     const [weightError, setWeightError] = useState('');
     const [heightError, setHeightError] = useState('');
 
+    const saveBMIToDatabase = async (weight, height) => {
+        try {
+            const userId = 1; // Posodobi s trenutno prijavljenim uporabnikom
+            const response = await fetch("http://localhost:3000/api/bmi", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ userId, teza: weight, visina: height }),
+            });
+
+            const data = await response.json();
+            if (response.ok) {
+                console.log(data.message);
+            } else {
+                console.error(data.error);
+            }
+        } catch (error) {
+            console.error("Napaka pri pošiljanju podatkov:", error);
+        }
+    };
+
     const calculateBMI = () => {
         const parsedWeight = parseFloat(weight);
         const parsedHeight = parseFloat(height);
@@ -16,17 +38,17 @@ function CalcBMI() {
         let valid = true;
 
         if (isNaN(parsedWeight) || parsedWeight <= 0) {
-            setWeightError('Prosimo vnesite veljavno težo');
+            setWeightError("Prosimo vnesite veljavno težo");
             valid = false;
         } else {
-            setWeightError('');
+            setWeightError("");
         }
 
         if (isNaN(parsedHeight) || parsedHeight <= 0) {
-            setHeightError('Prosimo vnesite veljavno višino');
+            setHeightError("Prosimo vnesite veljavno višino");
             valid = false;
         } else {
-            setHeightError('');
+            setHeightError("");
         }
 
         if (valid) {
@@ -35,12 +57,15 @@ function CalcBMI() {
             setBmi(bmiValue.toFixed(2));
 
             if (bmiValue < 18.5) {
-                setStatus('underweight');
+                setStatus("underweight");
             } else if (bmiValue >= 18.5 && bmiValue <= 24.9) {
-                setStatus('normal');
+                setStatus("normal");
             } else {
-                setStatus('overweight');
+                setStatus("overweight");
             }
+
+            // Pošlji podatke v bazo
+            saveBMIToDatabase(parsedWeight, parsedHeight);
         }
     };
 

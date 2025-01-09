@@ -77,10 +77,32 @@ const approveUser = async (req, res) => {
   }
 };
 
+
+/////////////////////////////// NIK K
+const addBMIRecord = async (req, res) => {
+  try {
+    const { userId, teza, visina } = req.body;
+
+    if (!userId || !teza || !visina) {
+      return res.status(400).json({ error: "Manjkajo podatki" });
+    }
+
+    await db.addBMIRecord(userId, teza, visina);
+    res.status(200).json({ message: "BMI zapis uspešno dodan" });
+    res.status(200).json({message: userId, teza, visina});
+
+  } catch (error) {
+    console.error("Napaka pri dodajanju BMI zapisa:", error);
+    res.status(500).json({ error: "Napaka na strežniku" });
+  }
+};
+
+
 module.exports = {
   testGet,
   registerUser,
   approveUser,
+  addBMIRecord
 };
 
 // main funkcije, za vracanje statusov v main program na front-end, tu tudi klices svoje inserte pa selecte iz baze
