@@ -44,7 +44,7 @@ function Login() {
         const responseData = await response.json();
         console.log(responseData.message);
         if (responseData.message === "Uspešna prijava") {
-          navigate("/");
+          navigate("/homepage");
         }
       }
     } catch (error) {
