@@ -20,11 +20,11 @@ function ForgotPassword() {
 
     try {
       const result = await emailjs.send(
-        "service_bxiwqka", // ID tvoje storitve (EmailJS)
+        "service_bxiwqka", // ID storitve (EmailJS)
         "template_nnnypwt", // ID predloge
         {
+          to_email: userEmail,
           to_name: "User",
-          to_email: "nmori986@gmail.com",
           verification_code: code,
         },
         "PlvE2HRTmAhWBdMul" // javni ključ iz EmailJS
@@ -42,9 +42,20 @@ function ForgotPassword() {
         <div className={styles.forgotPasswordBox}>
           <h1 className={styles.headerText}>Forgot Password</h1>
           {!emailSent ? (
-            <div className={styles.buttonSendCode} onClick={handleSendCode}>
-              Send Verification Code
-            </div>
+            <form onSubmit={handleSendCode}>
+              <div className={styles.inputEmail}>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit" className={styles.buttonSendCode}>
+                Send Verification Code
+              </button>
+            </form>
           ) : (
             <div>
               <div className={styles.input}>

@@ -1,8 +1,10 @@
 import styles from "./NavBar.module.css";
 import Logo from "./Logo.jsx";
 import Header from "../Header/Header.jsx";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
   return (
     <>
       <div className={styles.navAndHeader}>

@@ -1,6 +1,7 @@
 import styles from "./SignUp.module.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import emailjs from "emailjs-com";
 
 function SignUp() {
   const navigate = useNavigate();
