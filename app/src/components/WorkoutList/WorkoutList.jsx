@@ -7,13 +7,12 @@ import { PlusBtn } from "../plusBtn/plusBtn";
 import { WorkoutItem } from "../WorkoutMenu/workoutItem";
 import { Outlet } from "react-router-dom";
 import { getTable } from "../WorkoutMenu/WorkoutMenu"
+import ErrorBoundary, { getThrowAsyncError } from '../Error/ErrorBoundary';
+import ErrorPage from '../Error/ErrorPage';
 
 export function WorkoutList() {
     let {workoutId} = useParams();
-
-    if(isNaN(workoutId) || workoutId < 1){
-        throw Error("workoutId not selected properly.");
-    }
+    const throwAsyncError = getThrowAsyncError();
 
     const [data, setData] = useState([]);
     const [titles, setTitles] = useState([]);
@@ -24,20 +23,31 @@ export function WorkoutList() {
     }, []);
     
     let exercisesList = [];
-    if(data) {
-        data.forEach((e, i) => {
-            exercisesList.push(
-                <li className={MenuCSS.item} key={e.ime + i + '1'} >
-                     <WorkoutItem title={e.ime} n={i+1} isWorkout={false} key={e.ime + i + '2'}/>
-                </li>
-            );
-        });
-    }
     let title = [];
-    if (titles.length != 0) {
-        let titleName = titles[workoutId-1].ime;
-        title.push(<h1 className={`${CSS.tekst}`} key={titleName + '_title'} >{titleName}</h1>);
+
+    try{
+        if(isNaN(workoutId) || workoutId < 1){
+            throw Error("WorkoutId is set incorrectly.");
+        }
+
+        if(data) {
+            data.forEach((e, i) => {
+                exercisesList.push(
+                    <li className={MenuCSS.item} key={e.ime + i + '1'} >
+                        <WorkoutItem title={e.ime} n={i+1} isWorkout={false} key={e.ime + i + '2'}/>
+                    </li>
+                );
+            });
+        }
+        
+        if (titles.length != 0) {
+            let titleName = titles[workoutId-1].ime;
+            title.push(<h1 className={`${CSS.tekst}`} key={titleName + '_title'} >{titleName}</h1>);
+        }
+    } catch (e){
+        throwAsyncError(e);
     }
+    
 
     return (
         <div className={MenuCSS.menuContainer}>

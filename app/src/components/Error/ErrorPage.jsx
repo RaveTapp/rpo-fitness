@@ -1,12 +1,14 @@
 import { useRouteError } from "react-router";
+import { useNavigate } from "react-router-dom";
 
-export default function ErrorPage(){
-    const error = useRouteError()
+export default function ErrorPage(props){
+    const navigate = useNavigate();
 
     return (
         <div>
             <h2>Error</h2>
-            <p>{error.message}</p>
+            <p>{props.error}</p>
+            <button onClick={() => navigate(-1)} >Go Back</button>
         </div>
     )
 }

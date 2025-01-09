@@ -11,23 +11,18 @@ import ErrorBoundary from "./components/Error/ErrorBoundary";
 
 export default function ReneMain() {
   return (
-    <Routes>
+    <ErrorBoundary>
+      <Routes>
         <Route path="/" element={<Layout />} errorElement={<ErrorPage />} >
-          <Route element={
-              <ErrorBoundary fallback={<p>Error Boundary</p>}>
-                <React.Fragment />
-              </ErrorBoundary>
-            }
-          >
-            <Route index element={<WorkoutMenu />} />
-            <Route path=":workoutId" element={<WorkoutList />} > 
-              <Route path="exercise/:exerciseId" element={<ExerciseShowcase exerText="Kinda annoyingly long text that is passed through props and ends up here, you know" />} />
-            </Route>
-            <Route path="options" element={<OptionsMenu />} > 
-              <Route index element={<OptionsWindow title="Weekly Sessions" />} />
-            </Route>
+          <Route index element={<WorkoutMenu />} />
+          <Route path=":workoutId" element={<WorkoutList />} > 
+            <Route path="exercise/:exerciseId" element={<ExerciseShowcase exerText="Kinda annoyingly long text that is passed through props and ends up here, you know" />} />
           </Route>
-        </Route>
-    </Routes>
+          <Route path="options" element={<OptionsMenu />} > 
+            <Route index element={<OptionsWindow title="Weekly Sessions" />} />
+          </Route>
+          </Route>
+      </Routes>
+    </ErrorBoundary>
   );
 }

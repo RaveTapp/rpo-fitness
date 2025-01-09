@@ -3,6 +3,7 @@ import { WorkoutItem } from "./workoutItem";
 import { PlusBtn } from "../plusBtn/plusBtn";
 import MenuCSS from "./WorkoutMenu.module.css"
 import CSS from "../../main.module.css"
+import ErrorBoundary from '../Error/ErrorBoundary';
 
 export async function getTable(table, setData){
     try {

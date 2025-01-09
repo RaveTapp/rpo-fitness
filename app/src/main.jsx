@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReneMain from "./reneMain";
 import LandingPage from "./LandingPage";
 import SignUp from "./signup/signup";
@@ -9,24 +9,6 @@ import ForgotPassword from "./forgotPassword/forgotPassword";
 import AppNK from "./AppNK";
 import Nutrition from "./Nutrition";
 import Payment from "./payment/payment";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <LandingPage />,
-//     errorElement: <ErrorPage />,
-//     children: [
-//       {
-//         index: true,
-//         element: <Homepage />,
-//       },
-//       {
-//         path: "shop",
-//         element: <Shop />,
-//       },
-//     ],
-//   },
-// ]);
 
 export default function App() {
   return (
