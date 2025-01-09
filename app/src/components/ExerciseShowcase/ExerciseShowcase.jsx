@@ -32,7 +32,7 @@ async function getTableOffset(table, n, setData){
     }
 }
 
-export function ExerciseShowcase(props) {
+export function ExerciseShowcase() {
     let {exerciseId} = useParams();
 
     const [data, setData] = useState([]);
