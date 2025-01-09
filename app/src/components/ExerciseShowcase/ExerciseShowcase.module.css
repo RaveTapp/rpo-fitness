@@ -1,34 +1,34 @@
 :root {
-    --mid-bright-blue-color: #414C66;
-    --main-bg-color: #101319;
+  --mid-bright-blue-color: #414c66;
+  --main-bg-color: #101319;
 }
 
 .menu {
-    background-color: var(--mid-bright-blue-color);
-    border-radius: 12px;
-    width: max(40%, 310px);
-    box-shadow: 0 0 24px rgba(255, 255, 255, 0.2);
+  background-color: var(--mid-bright-blue-color);
+  border-radius: 12px;
+  width: max(40%, 310px);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.2);
 }
 
 .mainTitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5vw;
 }
 
 .imageContainer img {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .tekst {
-    text-align: center;
-    padding: 12px;
+  text-align: center;
+  padding: 12px;
 }
