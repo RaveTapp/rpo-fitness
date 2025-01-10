@@ -1,0 +1,21 @@
+.wrapper {
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+    background-image: linear-gradient(
+    to bottom right,
+    #31394c,
+    var(--main-bg-color)
+    );
+}
+
+.wrapper * {
+    color: #EEEEEE;
+}
+
+.button {
+    margin-top: 20px;
+    color: black;
+    padding: 4px;
+}
+
