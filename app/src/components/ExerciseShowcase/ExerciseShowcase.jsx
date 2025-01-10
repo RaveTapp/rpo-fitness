@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import ExerciseCSS from "./ExerciseShowcase.module.css";
 import CSS from "../../main.module.css";
 
-const wholeData = await fetch(
-  "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
-);
-const wholeJSON = await wholeData.json();
+//Pridobivanje podatkov o vajah iz API-ja
+const fetchExerciseData = async () => {
+  try {
+    const response = await fetch(
+      "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch exercise data from API");
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching exercise data from API:", error.message);
+    return [];
+  }
+};
 
+//Pridobimo tabelo iz lastne podatkovne baze, a samo 1 vajo
 async function getTableOffset(table, n, setData) {
   try {
     const response = await fetch(`http://localhost:3000/exercisesOffset`, {
@@ -30,23 +42,30 @@ async function getTableOffset(table, n, setData) {
       setData(data.rows);
     }
   } catch (error) {
-    console.log("Error: ", error.message);
+    console.log("Error fetching table with offset: ", error.message);
   }
 }
 
 export function ExerciseShowcase() {
-  let { exerciseId } = useParams();
+  const { exerciseId } = useParams();
 
   const [data, setData] = useState([]);
+  const [dataAPI, setDataAPI] = useState([]);
   const [exercise, setExercise] = useState([]);
 
+  //Samo enkrat pridobimo podatke iz API-ja
   useEffect(() => {
-    getTableOffset("vaja", exerciseId, setData);
+    fetchExerciseData().then(setDataAPI);
   }, []);
 
   useEffect(() => {
+    getTableOffset("vaja", exerciseId, setData);
+  }, [exerciseId]);
+
+  //Vsakič ko se spremeni izbrana vaja, jo poiščemo med podatki iz API-ja
+  useEffect(() => {
     if (Object.keys(data).length > 0) {
-      getExerciseJSON(data[0].ime, setExercise);
+      getExerciseJSON(data[0].ime, setExercise, dataAPI);
     }
   }, [data]);
 
@@ -74,8 +93,8 @@ export function ExerciseShowcase() {
       imagesElem.push(
         <img
           src={url}
-          alt={data[0].ime + " image " + (i + 1)}
-          key={data[0].ime + " image " + (i + 1)}
+          alt={data[0]?.ime + " image " + (i + 1)} //? preveri, če obstaja
+          key={data[0]?.ime + " image " + (i + 1)}
         />
       );
     }
@@ -94,9 +113,9 @@ export function ExerciseShowcase() {
   );
 }
 
-async function getExerciseJSON(title, setExercise) {
-  if (Object.keys(wholeJSON).length > 0) {
-    wholeJSON.forEach((e) => {
+async function getExerciseJSON(title, setExercise, dataAPI) {
+  if (Object.keys(dataAPI).length > 0) {
+    dataAPI.forEach((e) => {
       if (e.name == title) {
         return setExercise(e);
       }
