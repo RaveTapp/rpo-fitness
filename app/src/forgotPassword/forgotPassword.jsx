@@ -1,17 +1,32 @@
 import React, { useState } from "react";
 import styles from "./forgotPassword.module.css";
+import { useNavigate } from "react-router-dom";
 import emailjs from "emailjs-com";
 
 function ForgotPassword() {
   const [userEmail, setUserEmail] = useState("");
   const [emailSent, setEmailSent] = useState(false);
   const [verificationCode, setVerificationCode] = useState("");
+  const [enteredCode, setEnteredCode] = useState("");
+  const [isCodeValid, setIsCodeValid] = useState(null);
+
+  const navigate = useNavigate();
 
   const generateCode = () => {
     return Math.floor(100000 + Math.random() * 900000).toString();
   };
 
-  // Funkcija za pošiljanje e-pošte
+  const checkPassword = (e) => {
+    e.preventDefault();
+    if (enteredCode === verificationCode) {
+      setIsCodeValid(true);
+      navigate("/homepage");
+    } else {
+      setIsCodeValid(false);
+      alert("Verification code is incorrect. Please try again.");
+    }
+  };
+
   const handleSendCode = async (e) => {
     e.preventDefault();
 
@@ -57,14 +72,23 @@ function ForgotPassword() {
               </button>
             </form>
           ) : (
-            <div>
+            <form onSubmit={checkPassword}>
               <div className={styles.input}>
-                <input type="text" placeholder="Enter your code here" />
+                <input
+                  type="text"
+                  placeholder="Enter your code here"
+                  value={enteredCode}
+                  onChange={(e) => setEnteredCode(e.target.value)}
+                  required
+                />
               </div>
-              <div type="submit" className={styles.buttonSubmit}>
+              <button type="submit" className={styles.buttonSubmit}>
                 Submit
-              </div>
-            </div>
+              </button>
+              {isCodeValid === false && (
+                <p className={styles.errorText}>Invalid verification code.</p>
+              )}
+            </form>
           )}
         </div>
       </div>
