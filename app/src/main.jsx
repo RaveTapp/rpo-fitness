@@ -9,6 +9,7 @@ import ForgotPassword from "./forgotPassword/forgotPassword";
 import AppNK from "./AppNK";
 import Nutrition from "./Nutrition";
 import Payment from "./payment/payment";
+import Payment2 from "./payment2/payment2";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/homepage" element={<AppNK />} />
         <Route path="/nutrition" element={<Nutrition />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/payment2" element={<Payment2 />} />
       </Routes>
     </BrowserRouter>
   );

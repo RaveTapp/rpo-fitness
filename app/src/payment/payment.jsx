@@ -1,15 +1,12 @@
 import styles from "./payment.module.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Payment() {
   const [isChecked, setIsChecked] = useState(false);
-
+  const navigate = useNavigate();
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
-  };
-
-  const test = () => {
-    console.log("test");
   };
 
   return (
@@ -60,7 +57,9 @@ function Payment() {
             <button
               disabled={!isChecked}
               className={styles.subsctiption}
-              onClick={test}
+              onClick={() => {
+                navigate("/payment2");
+              }}
             >
               Submit Payment
             </button>
