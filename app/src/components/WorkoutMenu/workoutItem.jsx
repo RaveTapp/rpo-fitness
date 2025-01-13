@@ -27,13 +27,14 @@ async function deleteItem(itemName, isWorkout) {
       if (!response.ok) {
         console.log(data.error);
       } else {
-        console.log(data.message);
         let url = window.location.href;
         let num = parseInt(url.substring(url.length - 1)) - 1;
         if (num >= 1) {
           window.location.replace(
             window.location.href.substring(0, url.length - 1) + num
           );
+        } else {
+          window.location.reload();
         }
       }
     } catch (error) {
