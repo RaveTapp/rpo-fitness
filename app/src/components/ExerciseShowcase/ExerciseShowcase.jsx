@@ -3,21 +3,15 @@ import { useParams } from "react-router-dom";
 import ExerciseCSS from "./ExerciseShowcase.module.css";
 import CSS from "../../main.module.css";
 
-//Pridobivanje podatkov o vajah iz API-ja
-const fetchExerciseData = async () => {
-  try {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
-    );
-    if (!response.ok) {
-      throw new Error("Failed to fetch exercise data from API");
-    }
-    return await response.json();
-  } catch (error) {
-    console.error("Error fetching exercise data from API:", error.message);
-    return [];
-  }
-};
+let dataAPI;
+
+//Samo enkrat pridobimo podatke iz API-ja
+fetch(
+  "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json"
+)
+  .then((response) => response.json())
+  .then((data) => (dataAPI = data))
+  .catch((error) => console.error(error));
 
 //Pridobimo tabelo iz lastne podatkovne baze, a samo 1 vajo
 async function getTableOffset(table, n, setData) {
@@ -50,13 +44,7 @@ export function ExerciseShowcase() {
   const { exerciseId } = useParams();
 
   const [data, setData] = useState([]);
-  const [dataAPI, setDataAPI] = useState([]);
   const [exercise, setExercise] = useState([]);
-
-  //Samo enkrat pridobimo podatke iz API-ja
-  useEffect(() => {
-    fetchExerciseData().then(setDataAPI);
-  }, []);
 
   useEffect(() => {
     getTableOffset("vaja", exerciseId, setData);
