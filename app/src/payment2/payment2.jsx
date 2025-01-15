@@ -91,7 +91,7 @@ function Payment2() {
               navigate("/homepage");
             }}
           >
-            Confirm Payment
+            Submit Payment
           </div>
         </div>
         <div className={styles.cardPreview}>
