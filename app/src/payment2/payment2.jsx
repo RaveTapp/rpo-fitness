@@ -7,6 +7,7 @@ function Payment2() {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
+  const navigate = useNavigate();
 
   const handleCardNumberChange = (e) => {
     let value = e.target.value
@@ -83,6 +84,14 @@ function Payment2() {
               value={cvv}
               onChange={handleCvvChange}
             ></input>
+          </div>
+          <div
+            className={styles.CreateButton}
+            onClick={() => {
+              navigate("/homepage");
+            }}
+          >
+            Confirm Payment
           </div>
         </div>
         <div className={styles.cardPreview}>

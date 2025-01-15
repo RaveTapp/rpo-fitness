@@ -9,7 +9,7 @@
 
 .paymentBox {
   width: 40rem;
-  height: 20rem;
+  height: 22rem;
   background-color: #252525;
   color: white;
   position: absolute;
@@ -154,4 +154,16 @@
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
+}
+
+.CreateButton {
+  margin-top: 1rem;
+  height: 2rem;
+  width: 36rem;
+  border-radius: 3%;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  color: black;
 }
