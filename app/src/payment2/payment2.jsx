@@ -8,6 +8,44 @@ function Payment2() {
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
 
+  const handleCardNumberChange = (e) => {
+    let value = e.target.value
+      .split("")
+      .filter((char) => char >= "0" && char <= "9")
+      .join("");
+    let formattedValue = "";
+    for (let i = 0; i < value.length; i++) {
+      if (i > 0 && i % 4 === 0) {
+        formattedValue += " ";
+      }
+      formattedValue += value[i];
+    }
+    setCardNumber(formattedValue.substring(0, 19));
+  };
+
+  const handleExpiryDateChange = (e) => {
+    let value = e.target.value
+      .split("")
+      .filter((char) => char >= "0" && char <= "9")
+      .join("");
+    let formattedValue = "";
+    for (let i = 0; i < value.length; i++) {
+      if (i === 2) {
+        formattedValue += "/";
+      }
+      formattedValue += value[i];
+    }
+    setExpiryDate(formattedValue.substring(0, 5));
+  };
+
+  const handleCvvChange = (e) => {
+    let value = e.target.value
+      .split("")
+      .filter((char) => char >= "0" && char <= "9")
+      .join("");
+    setCvv(value.substring(0, 3));
+  };
+
   return (
     <>
       <div className={styles.paymentBody}>
