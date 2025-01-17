@@ -17,17 +17,18 @@ ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, T
 const LineChart = () => {
     // Sample data for the line chart
     const data = {
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], // X-os
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], 
         datasets: [
             {
                 label: "Daily BMI",
-                data: [100, 80, 70, 60, 50, 80, 100],
+                data: [24.22, 22.16, 15.00, null, null, null, null], // Null za manjkajoče dni
                 fill: false,
-                borderColor: "#92ACE5", 
-                tension: 0.1, 
+                borderColor: "#92ACE5",
+                tension: 0.1,
             },
         ],
     };
+    
 
     const options = {
         responsive: true,

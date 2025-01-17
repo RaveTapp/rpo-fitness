@@ -6,6 +6,7 @@ import HeadingTwoLeft from './HeadingTwoLeft/HeadingTwoLeft.jsx';
 import SearchBar from './SearchBar/SearchBar.jsx';
 import MealComponent from './MealComponent/MealComponent.jsx';
 import HydrationComponent from './HydrationComponent/HydrationComponent.jsx';
+import Footer from './FooterNK/Footer.jsx';
 import styles from "./Nutrition.module.css";
 
 const Nutrition = () => {
@@ -33,7 +34,7 @@ const Nutrition = () => {
             </div>
             <HeadingTwoCenter name="HYDRATION" />
             <HydrationComponent />
-
+            <Footer />
         </div>
     );
 };

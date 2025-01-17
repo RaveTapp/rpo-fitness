@@ -33,14 +33,14 @@ function AppNK() {
         <div className={styles["app-container"]}>
           {showWelcome && (
             <div className={styles.welcome}>
-              <h1 className={styles["welcome-text"]}>Welcome Back, NAME</h1>
+              <h1 className={styles["welcome-text"]}>Welcome Back</h1>
             </div>
           )}
 
           {showHomePage && (
             <>
               <Header /> 
-              <SectionName name="WELCOME BACK, NAME" />
+              <SectionName name="WELCOME BACK" />
               <div className={styles.cards_container}>
                 <Card
                   imageSrc={exercisePic}
