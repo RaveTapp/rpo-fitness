@@ -11,10 +11,12 @@ import styles from "./AppNK.module.css";
 import LineChart from "./GraphBMINK/LineGraph.jsx";
 
 function AppNK() {
+  // Stanje za prikaz uvodnega zaslona in začetne strani
   const [showWelcome, setShowWelcome] = useState(true);
   const [showHomePage, setShowHomePage] = useState(false);
 
   useEffect(() => {
+    //časovnik za skritje uvodnega zaslona po 4 sekundah
     const fadeOutTimer = setTimeout(() => {
       setShowWelcome(false);
     }, 4000);
@@ -24,6 +26,7 @@ function AppNK() {
     }, 3500);
 
     return () => {
+      // Počistimo časovnike, da preprečimo uhajanje pomnilnika
       clearTimeout(fadeOutTimer);
       clearTimeout(homePageTimer);
     };
