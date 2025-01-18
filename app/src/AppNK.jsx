@@ -33,44 +33,44 @@ function AppNK() {
   }, []);
 
   return (
-        <div className={styles["app-container"]}>
-          {showWelcome && (
-            <div className={styles.welcome}>
-              <h1 className={styles["welcome-text"]}>Welcome Back</h1>
-            </div>
-          )}
-
-          {showHomePage && (
-            <>
-              <Header /> 
-              <SectionName name="WELCOME BACK" />
-              <div className={styles.cards_container}>
-                <Card
-                  imageSrc={exercisePic}
-                  title="Exercise"
-                  description="Learn about various exercises to stay fit and healthy!"
-                  redirectUrl="/exercise" 
-                />
-                <Card
-                  imageSrc={nutritionPic}
-                  title="Nutrition"
-                  description="Discover healthy eating habits and nutritious meals!"
-                  redirectUrl="/nutrition"
-                />
-              </div>
-              <SectionName name="PROGRESS" />
-              <div className={styles.bmiChartContainer}>
-                <div className={styles.bmiContainer}>
-                  <CalcBMI />
-                </div>
-                <div className={styles.chartContainer}>
-                  <LineChart />
-                </div>
-              </div>
-              <Footer />
-            </>
-          )}
+    <div className={styles["app-container"]}>
+      {showWelcome && (
+        <div className={styles.welcome}>
+          <h1 className={styles["welcome-text"]}>Welcome Back</h1>
         </div>
+      )}
+
+      {showHomePage && (
+        <>
+          <Header />
+          <SectionName name="WELCOME BACK" />
+          <div className={styles.cards_container}>
+            <Card
+              imageSrc={exercisePic}
+              title="Exercise"
+              description="Learn about various exercises to stay fit and healthy!"
+              redirectUrl="/workout"
+            />
+            <Card
+              imageSrc={nutritionPic}
+              title="Nutrition"
+              description="Discover healthy eating habits and nutritious meals!"
+              redirectUrl="/nutrition"
+            />
+          </div>
+          <SectionName name="PROGRESS" />
+          <div className={styles.bmiChartContainer}>
+            <div className={styles.bmiContainer}>
+              <CalcBMI />
+            </div>
+            <div className={styles.chartContainer}>
+              <LineChart />
+            </div>
+          </div>
+          <Footer />
+        </>
+      )}
+    </div>
   );
 }
 
